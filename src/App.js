@@ -8,14 +8,6 @@ import LoginPage from './routes/homepage/homepage';
 import NotFoundPage from './component/notfoundpage/notfoundpage';
 import Footer from './component/footer/footer';
 import { Route, Switch } from 'react-router-dom'
-import LandingPage from './routes/landingpage/landingpage'
-import HomePage from './routes/homepage/homepage'
-import RegistrationPage from './routes/regPage/regPage'
-import LoginPage from './routes/loginpage/loginpage'
-import FitnessTipsPage from './component/fitness/fitness'
-import NotFoundPage from './component/notfoundpage/notfoundpage'
-import Navbar from './component/navBar/navBar'
-import Footer from './component/footer/footer'
 
 export default class App extends Component {
   constructor() {
