@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import LandingPage from './routes/landingpage/landingpage';
+import React, {Component} from 'react'
+import NavBar from './component/navBar/navBar';
 import HomePage from './routes/homepage/homepage';
-import RegistrationPage from './routes/regPage/regPage';
-import FitnessTipsPage from './component/fitness/fitness';
-import LoginPage from './component/forms/loginform/loginform';
+import LandingPage from './routes/homepage/homepage';
+import RegistrationPage from './routes/homepage/homepage';
+import FitnessTipsPage from './routes/homepage/homepage';
+import LoginPage from './routes/homepage/homepage';
 import NotFoundPage from './component/notfoundpage/notfoundpage';
-import Navbar from './component/navBar/navBar';
 import Footer from './component/footer/footer';
-
-
+import { Route, Switch } from 'react-router-dom'
 
 export default class App extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       hasError: false,
     }
@@ -23,7 +21,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <nav className="App-nav">
-          <Navbar />
+          <NavBar />
         </nav>
         
         <main className="App_main">
@@ -31,32 +29,32 @@ export default class App extends Component {
             <p className='red'>
               An unknown error has occurred.
           </p>}
-          <Switch>
-            <Route
-              exact
-              path={'/'}
-              component={(props) => <LandingPage {...props} />}
-            />
-            <Route
-              path={'/home'}
-              component={(props) => <HomePage {...props} />}
-            />
-            <Route
-              path={'/register'}
-              component={(props) => <RegistrationPage {...props} />}
-            />
-            <Route
-              path={'/login'}
-              component={(props) => <LoginPage {...props} />}
-            />
-            <Route
-              path={'/fitnesstips'}
-              component={(props) => <FitnessTipsPage {...props} />}
-            />
-            <Route
-              component={(props) => <NotFoundPage {...props} />}
-            />
-          </Switch>
+            <Switch>
+              <Route
+                exact
+                path={'/'}
+                component={(props) => <LandingPage {...props}/>}
+              />
+              <Route
+                path={'/home'}
+                component={(props) => <HomePage {...props}/>}
+              />
+              <Route 
+                path={'/register'}
+                component={(props) => <RegistrationPage {...props}/>}
+              />
+              <Route 
+                path={'/login'}
+                component={(props) => <LoginPage {...props}/>}
+              />
+              <Route 
+                path={'/fitnesstips'}
+                component={(props) => <FitnessTipsPage {...props}/>}
+              />
+              <Route 
+                component={(props) => <NotFoundPage {...props}/>}
+              />
+            </Switch>
 
         </main>
         <footer>
@@ -68,6 +66,3 @@ export default class App extends Component {
   }
 
 }
-
-
-

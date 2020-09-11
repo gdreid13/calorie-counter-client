@@ -1,9 +1,11 @@
 import { render } from 'enzyme';
 import React from 'react';
-const notfoundpage = () => {
-	return(
-		<div></div>
-	)
-};
 
-export default notfoundpage;
+export default class NotFoundPage extends React.Component {
+	render() {
+		return (
+			<div />
+		)
+	}
+}
+
