@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-
+import LandingPage from './routes/landingpage/landingpage'
+import HomePage from './routes/homepage/homepage'
+import RegistrationPage from './routes/regPage/regPage'
+import LoginPage from './routes/loginpage/loginpage'
+import FitnessTipsPage from './component/fitness/fitness'
+import NotFoundPage from './component/notfoundpage/notfoundpage'
+import Navbar from './component/navBar/navBar'
+import Footer from './component/footer/footer'
 
 export default class App extends Component {
   constructor(props) {
@@ -25,7 +32,7 @@ export default class App extends Component {
               <Route
                 exact
                 path={'/'}
-                component={(props) => <LandingPage {...props}/> }
+                component={(props) => <LandingPage {...props}/>}
               />
               <Route
                 path={'/home'}
@@ -44,10 +51,6 @@ export default class App extends Component {
                 component={(props) => <FitnessTipsPage {...props}/>}
               />
               <Route 
-                path={'/meals'}
-                component={(props) => <MealsPage {...props}/>}
-              />
-              <Route 
                 component={(props) => <NotFoundPage {...props}/>}
               />
             </Switch>
@@ -62,5 +65,3 @@ export default class App extends Component {
   }
 
 }
-
-export default App;
