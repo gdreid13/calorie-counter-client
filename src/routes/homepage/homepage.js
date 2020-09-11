@@ -1,8 +1,19 @@
 import React from 'react';
-export default class calender extends React.Component {
-	render() {
-		return (
-			<div />
-		);
-	}
+import Calender from '../../component/calender/calender'
+import './homepage-style.css'
+export default class homePage extends React.Component{
+
+    state={
+        date:new Date()
+    }
+    render(){
+        return(
+
+            <div> 
+            <Calender/>
+            </div>
+        
+        )
+}
+
 }

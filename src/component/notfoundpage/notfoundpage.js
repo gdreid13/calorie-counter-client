@@ -7,3 +7,4 @@ export default class NotFoundPage extends React.Component {
 		)
 	}
 }
+

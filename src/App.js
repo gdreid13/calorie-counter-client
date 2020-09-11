@@ -1,4 +1,12 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
+import NavBar from './component/navBar/navBar';
+import HomePage from './routes/homepage/homepage';
+import LandingPage from './routes/homepage/homepage';
+import RegistrationPage from './routes/homepage/homepage';
+import FitnessTipsPage from './routes/homepage/homepage';
+import LoginPage from './routes/homepage/homepage';
+import NotFoundPage from './component/notfoundpage/notfoundpage';
+import Footer from './component/footer/footer';
 import { Route, Switch } from 'react-router-dom'
 import LandingPage from './routes/landingpage/landingpage'
 import HomePage from './routes/homepage/homepage'
@@ -10,8 +18,8 @@ import Navbar from './component/navBar/navBar'
 import Footer from './component/footer/footer'
 
 export default class App extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       hasError: false,
     }
@@ -21,7 +29,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <nav className="App-nav">
-          <Navbar />
+          <NavBar />
         </nav>
         <main className="App_main">
           {this.state.hasError &&
