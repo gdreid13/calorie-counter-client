@@ -1,6 +1,8 @@
 import React from 'react';
 const fitness = () => {
-	<div />;
+	return(
+		<div> </div>
+	)
 };
 
-export default navBar;
+export default fitness;

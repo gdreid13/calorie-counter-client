@@ -3,7 +3,9 @@ import './footer-style.css'
 
 export default class footer extends React.Component{
     render(){
+     return(
         <div> 
         </div>
+     )
     }
 }
