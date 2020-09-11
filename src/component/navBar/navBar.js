@@ -1,8 +1,13 @@
 import React from 'react';
 
 export default class navBar extends React.Component{
-    render(){
+    render (){
+       return(
         <div> 
+
         </div>
-    }
+       ) 
+       }
+       
+    
 }
