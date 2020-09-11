@@ -1,7 +1,9 @@
+import { render } from 'enzyme';
 import React from 'react';
-
 const notfoundpage = () => {
-	<div />;
+	return(
+		<div></div>
+	)
 };
 
 export default notfoundpage;

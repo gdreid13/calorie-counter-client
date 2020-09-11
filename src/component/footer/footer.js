@@ -3,7 +3,10 @@ import './footer-style.css'
 
 export default class footer extends React.Component{
     render(){
-        <div> 
+        return(
+            <div> 
         </div>
+        )
+        
     }
 }
