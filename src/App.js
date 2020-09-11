@@ -25,7 +25,7 @@ export default class App extends Component {
               <Route
                 exact
                 path={'/'}
-                component={(props) => <LandingPage {...props}/>}
+                component={(props) => <LandingPage {...props}/> }
               />
               <Route
                 path={'/home'}
