@@ -7,13 +7,12 @@ import FitnessTipsPage from './routes/homepage/homepage';
 import LoginPage from './routes/homepage/homepage';
 import NotFoundPage from './component/notfoundpage/notfoundpage';
 import Footer from './component/footer/footer';
-
 import { Route, Switch } from 'react-router-dom'
 
 
 export default class App extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       hasError: false,
     }
