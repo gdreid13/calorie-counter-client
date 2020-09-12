@@ -1,0 +1,29 @@
+.landing {
+  margin-top: 150px;
+}
+.landing__header {
+  font-size: 40px;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+}
+
+.landing__description{
+  font-size: 25px;
+  padding-bottom: 30px;
+}
+
+.landing__link {
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(12, 10, 104);
+}
+
+.landing__link:hover {
+  color:red;
+}
+
+.landing__img {
+  width: 95%;
+  height: 500px;
+}

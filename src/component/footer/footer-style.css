@@ -1,0 +1,19 @@
+.app_footer{
+    position: fixed;
+    bottom: 0; left: 0; right:0;
+    height: 60px;
+    text-align: center;
+    background-color:  rgb(12, 10, 104); color: white;
+    padding: 15px;
+    overflow: hidden;
+}
+.app_footer div {
+    margin-bottom: 10px;
+}
+.app_footer a {
+    color:white;
+    text-decoration: none;
+}
+.app_footer a:hover {
+    color: yellow;
+}

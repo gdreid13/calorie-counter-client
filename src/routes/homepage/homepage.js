@@ -1,18 +1,28 @@
 import React from 'react';
-import Calender from '../../component/calender/calender'
-import './homepage-style.css'
-export default class homePage extends React.Component{
+import CalorieCalendar from '../../component/calendar/calendar';
+import './homepage-style.css';
+import Mealinputform from '../../component/forms/mealInputform/mealInputform'
 
-    state={
-        date:new Date()
+export default class homePage extends React.Component {
+
+    state = {
+        date: new Date()
     }
-    render(){
-        return(
 
-            <div> 
-            <Calender/>
+    
+    render() {
+        return (
+
+            <div className="home">
+                <h1>My Dashboard</h1>
+                <h2>myCalories / Week = <p className="calorieTotal">9000</p>{}</h2>
+                <h2>myCalories / Month = <p className="calorieTotal">90000</p>{}</h2>
+                <CalorieCalendar
+                />
+                <Mealinputform />
             </div>
-        
+
         )
-}
+    }
+
 }
