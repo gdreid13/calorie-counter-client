@@ -2,14 +2,7 @@ import React from 'react'
 import LoginForm from '../../component/forms/loginform/loginform'
 // import { withRouter } from 'react-router-dom'
 import './loginpage-style.css'
-<<<<<<< HEAD
-export default class loginPage extends React.Component{
-    render(){
-        return(
 
-        <div> 
-        </div>
-=======
 export default class loginPage extends React.Component {
     static defaultProps = {
         location: {},
@@ -33,7 +26,6 @@ export default class loginPage extends React.Component {
                 onLoginSuccess={this.handleLoginSuccess}
             />
         </section>
->>>>>>> master
         )
     }
 }
