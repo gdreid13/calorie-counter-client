@@ -1,4 +1,12 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
+import NavBar from './component/navBar/navBar';
+import HomePage from './routes/homepage/homepage';
+import LandingPage from './routes/landingpage/landingpage';
+import RegistrationPage from './routes/regPage/regPage';
+import FitnessTipsPage from './component/fitness/fitness';
+import LoginPage from './routes/loginpage/loginpage';
+import NotFoundPage from './component/notfoundpage/notfoundpage';
+import Footer from './component/footer/footer';
 import { Route, Switch } from 'react-router-dom'
 import Navbar from './component/navBar/navBar'
 import Footer from './component/footer/footer'
@@ -9,10 +17,9 @@ import LoginPage from './routes/loginpage/loginpage'
 
 
 
-
 export default class App extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       hasError: false,
     }
@@ -22,7 +29,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <nav className="App-nav">
-          <Navbar />
+          <NavBar />
         </nav>
         <main className="App_main">
           {this.state.hasError &&
@@ -34,7 +41,7 @@ export default class App extends Component {
               <Route
                 exact
                 path={'/'}
-                component={(props) => <LandingPage {...props}/> }
+                component={(props) => <LandingPage {...props}/>}
               />
               <Route
                 path={'/home'}
@@ -48,7 +55,13 @@ export default class App extends Component {
                 path={'/login'}
                 component={(props) => <LoginPage {...props}/>}
               />
-              
+              <Route 
+                path={'/fitnesstips'}
+                component={(props) => <FitnessTipsPage {...props}/>}
+              />
+              <Route 
+                component={(props) => <NotFoundPage {...props}/>}
+              />
             </Switch>
 
         </main>
@@ -62,16 +75,3 @@ export default class App extends Component {
 
 }
 
-/*
-<Route 
-                path={'/fitnesstips'}
-                component={(props) => <FitnessTipsPage {...props}/>}
-              />
-              <Route 
-                path={'/meals'}
-                component={(props) => <MealsPage {...props}/>}
-              />
-              <Route 
-                component={(props) => <NotFoundPage {...props}/>}
-              />
-*/

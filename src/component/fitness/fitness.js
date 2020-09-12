@@ -1,6 +1,10 @@
+import { render } from 'enzyme';
 import React from 'react';
-const fitness = () => {
-	<div />;
-};
 
-export default navBar;
+export default class FitnessTipsPage extends React.Component {
+	render() {
+		return (
+			<div />
+		)
+	}
+}

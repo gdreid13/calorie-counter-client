@@ -1,10 +1,9 @@
 import React from 'react';
 import './regPage-style.css'
 export default class regPage extends React.Component{
-    render(){
+    render() {
         return (
-            <div> 
-            </div>
+            <div />
         )
     }
 }
