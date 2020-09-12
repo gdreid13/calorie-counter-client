@@ -44,7 +44,7 @@ export default class RegForm extends React.Component {
                 </div>
                 <div>
                     <label for="age">Age</label>
-                    <input placeholder='' type="text" name='age' id='age' />
+                    <input placeholder='Age' type="text" name='age' id='age' />
                 </div>
                 <div>
                     <label for="gender">Gender</label>
