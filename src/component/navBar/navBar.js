@@ -57,5 +57,6 @@ export default class navBar extends Component{
                    
             </nav>
         )
+       
     }
 }
