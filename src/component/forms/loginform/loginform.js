@@ -33,7 +33,7 @@ export default class LoginForm extends React.Component {
     render() {
         return (
             <section>
-                <form class='Login-form'>
+                <form className='Login-form'>
                     <div>
                         <label for='user_name'>Email</label>
                         <input type='text' name='user_name' id='user_name' />

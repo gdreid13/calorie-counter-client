@@ -37,7 +37,7 @@ export default class RegForm extends React.Component {
     render() {
         return (
         <section>
-            <form class='register-form'>
+            <form className='register-form'>
                 <div>
                     <label for="name">Name</label>
                     <input placeholder='Full Name' type="text" name='name' id='name' />
