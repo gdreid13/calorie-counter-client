@@ -26,7 +26,6 @@ export default class loginPage extends React.Component {
                 onLoginSuccess={this.handleLoginSuccess}
             />
         </section>
-
         )
     }
 }
