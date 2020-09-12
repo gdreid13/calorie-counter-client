@@ -16,6 +16,7 @@
 }
 
 .fitness__image {
+  height: 500px;
   transition: transform 0.4s;
   border-radius: 4px;
 }
