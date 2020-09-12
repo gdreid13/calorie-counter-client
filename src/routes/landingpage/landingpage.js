@@ -1,10 +1,7 @@
 import React from 'react';
-import './landingpage-style.css'
-
 import './landingpage-style.css';
 import NavBar from '../../component/navBar/navBar';
 import Footer from '../../component/footer/footer';
-import '../../assets/landing.jpg';
 
 export default class LandingPage extends React.Component{
     render() {

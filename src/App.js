@@ -9,9 +9,6 @@ import NotFoundPage from './component/notfoundpage/notfoundpage';
 import Footer from './component/footer/footer';
 import { Route, Switch } from 'react-router-dom'
 
-
-
-
 export default class App extends Component {
   constructor() {
     super()
