@@ -1,7 +1,9 @@
 import React from 'react';
 import Calendar from 'react-calendar';
 import './react-calendar.scss';
-export default class calender extends React.Component {
+
+export default class CalorieCalendar extends React.Component {
+
 	state = {
 		date: new Date(),
 		currentDate: '',

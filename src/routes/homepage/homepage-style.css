@@ -4,3 +4,8 @@
 .home {
   margin-top: 100px;
 }
+
+.calorieTotal {
+  display: inline-flex;
+  color: rgb(0, 197, 0)
+}
