@@ -8,6 +8,8 @@ export default class homePage extends React.Component {
     state = {
         date: new Date()
     }
+
+    
     render() {
         return (
 
