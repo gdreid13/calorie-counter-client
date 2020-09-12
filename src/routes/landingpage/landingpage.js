@@ -4,7 +4,7 @@ import NavBar from '../../component/navBar/navBar';
 import Footer from '../../component/footer/footer';
 import '../../assets/landing.jpg';
 
-export default class landingPage extends React.Component {
+export default class LandingPage extends React.Component{
     render() {
         return (
             <div className="landing">

@@ -1,13 +1,21 @@
 import React, {Component} from 'react'
 import NavBar from './component/navBar/navBar';
 import HomePage from './routes/homepage/homepage';
-import LandingPage from './routes/homepage/homepage';
-import RegistrationPage from './routes/homepage/homepage';
-import FitnessTipsPage from './routes/homepage/homepage';
-import LoginPage from './routes/homepage/homepage';
+import LandingPage from './routes/landingpage/landingpage';
+import RegistrationPage from './routes/regPage/regPage';
+import FitnessTipsPage from './component/fitness/fitness';
+import LoginPage from './routes/loginpage/loginpage';
 import NotFoundPage from './component/notfoundpage/notfoundpage';
 import Footer from './component/footer/footer';
 import { Route, Switch } from 'react-router-dom'
+import Navbar from './component/navBar/navBar'
+import Footer from './component/footer/footer'
+import HomePage from './routes/homepage/homepage'
+import LandingPage from './routes/landingpage/landingpage'
+import RegistrationPage from './routes/regPage/regPage'
+import LoginPage from './routes/loginpage/loginpage'
+
+
 
 export default class App extends Component {
   constructor() {
@@ -29,6 +37,7 @@ export default class App extends Component {
             <p className='red'>
               An unknown error has occurred.
           </p>}
+          
             <Switch>
               <Route
                 exact
@@ -66,3 +75,4 @@ export default class App extends Component {
   }
 
 }
+
