@@ -12,7 +12,8 @@ export default class loginPage extends React.Component {
     }
 
     handleLoginSuccess = () => {
-        this.props.history.push('/home')
+        const { history } = this.props
+        history.push('/home')
     }
 
     render() {
