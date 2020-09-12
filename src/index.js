@@ -6,6 +6,9 @@ import './index.css';
 import App from './App';
 
 import {
+  faRunning,
+  faEnvelope,
+  faCopyright,
   faBars,
   faThumbsDown,
   faThumbsUp,
@@ -27,6 +30,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
+  faRunning,
+  faEnvelope,
+  faCopyright,
   faBars,
   faHamburger,
   faThumbsDown,
