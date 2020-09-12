@@ -3,7 +3,7 @@ import TokenService from '../../../services/TokenService'
 import AuthHelperService from '../../../services/AuthHelperService'
 import { Link } from 'react-router-dom';
 
-export default class loginform extends React.Component {
+export default class LoginForm extends React.Component {
     static defaultProps = {
         onLoginSuccess: () => { }
     }
