@@ -11,6 +11,13 @@
     padding: 15px;
     background-color:  rgb(12, 10, 104); 
     color: white;
+    overflow: hidden;
+}
+.app_nav h1 {
+    text-align: left;
+}
+.app_nav a {
+    text-decoration: none;
 }
 .app_nav a:hover {
     color: yellow;
