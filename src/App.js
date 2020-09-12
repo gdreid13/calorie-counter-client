@@ -31,6 +31,7 @@ export default class App extends Component {
         <nav className="App-nav">
           <NavBar />
         </nav>
+        
         <main className="App_main">
           {this.state.hasError &&
             <p className='red'>
