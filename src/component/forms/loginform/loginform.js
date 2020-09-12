@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default class LoginForm extends React.Component {
     static defaultProps = {
-        onLoginSuccess: () => { }
+        onLoginSuccess: () => {this.props.history.push('/') }
     }
 
     handleSubmitJwtAuth = ev => {
