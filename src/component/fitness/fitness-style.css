@@ -15,6 +15,16 @@
   text-decoration: underline;
 }
 
+.fitness__image {
+  transition: transform 0.4s;
+  border-radius: 4px;
+}
+
+.fitness__image:hover {
+  transform: scale(1.05);
+  opacity: 90%;
+}
+
 .imgContainer {
   padding-top: 20px;
 }
@@ -24,11 +34,3 @@ h2 {
   padding-bottom: 20px;
 }
 
-img {
-  transition: transform 0.4s;
-  border-radius: 4px;
-}
-img:hover {
-  transform: scale(1.05);
-  opacity: 90%;
-}
