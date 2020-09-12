@@ -37,7 +37,7 @@ export default class RegForm extends React.Component {
     render() {
         return (
         <section>
-            <form class='register-form'>
+            <form className='register-form'>
                 <div>
                     <label for="name">Name</label>
                     <input placeholder='Full Name' type="text" name='name' id='name' />
@@ -48,7 +48,7 @@ export default class RegForm extends React.Component {
                 </div>
                 <div>
                     <label for="gender">Gender</label>
-                    <select id="gender" name="gender" size="3">
+                    <select id="gender" name="gender">
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="other">Other</option>

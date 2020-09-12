@@ -11,7 +11,7 @@ export default class LandingPage extends React.Component{
                 <h1>myCalories</h1>
                 <h3>Keep track of your calorie intake to stay fit!</h3>
                 <h4>This app will allow you to keep track of your weekly and monthly calorie intake</h4>
-                <img src="/assets/landing.jpg" alt="Landing Page Photo"></img>
+                <img src="/assets/landing.jpg" alt="Landing page cover"></img>
                 <Footer />
             </div>
         )
