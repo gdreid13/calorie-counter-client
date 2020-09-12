@@ -9,7 +9,6 @@ import NotFoundPage from './component/notfoundpage/notfoundpage';
 import Footer from './component/footer/footer';
 import { Route, Switch } from 'react-router-dom'
 
-
 export default class App extends Component {
   constructor() {
     super()
@@ -33,7 +32,7 @@ export default class App extends Component {
               <Route
                 exact
                 path={'/'}
-                component={(props) => <LandingPage {...props}/> }
+                component={(props) => <LandingPage {...props}/>}
               />
               <Route
                 path={'/home'}
@@ -51,7 +50,6 @@ export default class App extends Component {
                 path={'/fitnesstips'}
                 component={(props) => <FitnessTipsPage {...props}/>}
               />
-           
               <Route 
                 component={(props) => <NotFoundPage {...props}/>}
               />
@@ -67,5 +65,3 @@ export default class App extends Component {
   }
 
 }
-
-
