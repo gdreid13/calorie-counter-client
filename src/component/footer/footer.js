@@ -9,13 +9,13 @@ export default class Footer extends Component{
         return (
             <div className='app_footer'> 
                 <div>
-                    <FontAwesomeIcon className='icon' icon='copyright'/>Thinkful 2020
+                    <FontAwesomeIcon className='icon' icon='copyright'/>
+                    <span>{' '}Thinkful 2020</span>
                 </div>
-                <div>
-                    <Link to='myCalories2020@gmail.com'aria-label='email'><FontAwesomeIcon className='icon' icon='envelope'/>
+                <Link to='myCalories2020@gmail.com'aria-label='email'><FontAwesomeIcon className='icon' icon='envelope'/>
                             {' '}{' '}EMAIL US
-                    </Link>
-                </div>
+                </Link>
+                
             </div>
         )
     }
