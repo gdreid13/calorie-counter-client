@@ -40,7 +40,7 @@ export default class RegForm extends React.Component {
             <form className='register-form' onSubmit={this.handleSubmit}>
                 <div>
                     <label htmlFor="name">Name</label>
-                    <input placeholder='Full Name' type="text" name='name' id='name' required />
+                    <input placeholder='Full Name' type="text" name='fullname' id='fullname' required />
                 </div>
                 <div>
                     <label htmlFor="age">Age</label>
