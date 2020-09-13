@@ -1,0 +1,31 @@
+.form{
+    margin: 25px auto;
+    width: 75%;
+    max-width: 700px;
+}
+.form_input{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.form_input label {
+    width: 30%;
+    text-align: left;
+}
+.form_input input {
+    width: 60%;
+}
+
+.form_control {
+    display: flex; justify-content: space-evenly; text-align: center;
+}
+.form_control button{
+    margin-top: 20px; width: 100px;padding: 10px;
+    border: none; color: white ; background-color: black;
+}
+.form_control button:hover {
+    cursor: pointer; color: yellow;
+}
+.form_control button:disabled {
+    cursor: not-allowed; background-color: gray;
+}
