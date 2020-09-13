@@ -1,11 +1,13 @@
 import React from 'react';
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import './react-calendar.scss';
 
 export default class CalorieCalendar extends React.Component {
+
 	state = {
 		date: new Date(),
-		currentDate: ''
+		currentDate: '',
+		// hover:new Date(),
     };
     
 
@@ -13,7 +15,9 @@ export default class CalorieCalendar extends React.Component {
 	render() {
 		return (
 			<div>
-				<Calendar value={this.state.date} onChange={(date) => console.log(date)} />
+				<Calendar className="react-calendar"
+				value={this.state.date} 
+				onChange={(date) => this.props.getSelectedData(date)} />
 			</div>
 		);
 	}
