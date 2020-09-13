@@ -12,6 +12,9 @@ export default class RegPage extends React.Component {
         const { history } = this.props
         history.push('/login')
     }
+    handleCancel= ()=>{
+        this.props.history.goBack()
+    }
 
     render() {
         return (
@@ -21,6 +24,7 @@ export default class RegPage extends React.Component {
                 </header>
                 <RegForm
                     onRegistrationSuccess={this.handleRegistrationSuccess}
+                    handleCancel= {this.handleCancel}
                 />
             </section>
         )
