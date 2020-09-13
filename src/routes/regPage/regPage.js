@@ -17,7 +17,6 @@ export default class RegPage extends React.Component {
         return (
             <section>
                 <header role="banner" className="reg_page">
-                    <h1>Carb Counter</h1>
                     <h3>Sign up keep track of your calorie intake and stay fit!</h3>
                 </header>
                 <RegForm

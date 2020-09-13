@@ -20,7 +20,6 @@ export default class loginPage extends React.Component {
         return (
         <section className="login_page">
             <header role="banner">
-                <h1>Carb Counter</h1>
                 <h3>Sign in to keep track of your calorie intake</h3>
             </header>
             <LoginForm 
