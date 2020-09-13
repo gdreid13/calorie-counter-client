@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import NavBar from './component/navBar/navBar';
 import HomePage from './routes/homepage/homepage';
 import LandingPage from './routes/landingpage/landingpage';
@@ -23,39 +23,39 @@ export default class App extends Component {
         <nav className="App-nav">
           <NavBar />
         </nav>
-        
+
         <main className="App_main">
           {this.state.hasError &&
             <p className='red'>
               An unknown error has occurred.
           </p>}
-          
-            <Switch>
-              <Route
-                exact
-                path={'/'}
-                component={(props) => <LandingPage {...props}/>}
-              />
-              <Route
-                path={'/home'}
-                component={(props) => <HomePage {...props}/>}
-              />
-              <Route 
-                path={'/register'}
-                component={(props) => <RegistrationPage {...props}/>}
-              />
-              <Route 
-                path={'/login'}
-                component={(props) => <LoginPage {...props}/>}
-              />
-              <Route 
-                path={'/fitnesstips'}
-                component={(props) => <FitnessTipsPage {...props}/>}
-              />
-              <Route 
-                component={(props) => <NotFoundPage {...props}/>}
-              />
-            </Switch>
+
+          <Switch>
+            <Route
+              exact
+              path={'/'}
+              component={(props) => <LandingPage {...props} />}
+            />
+            <Route
+              path={'/home'}
+              component={(props) => <HomePage {...props} />}
+            />
+            <Route
+              path={'/register'}
+              component={(props) => <RegistrationPage {...props} />}
+            />
+            <Route
+              path={'/login'}
+              component={(props) => <LoginPage {...props} />}
+            />
+            <Route
+              path={'/fitnesstips'}
+              component={(props) => <FitnessTipsPage {...props} />}
+            />
+            <Route
+              component={(props) => <NotFoundPage {...props} />}
+            />
+          </Switch>
 
         </main>
         <footer>
