@@ -3,7 +3,7 @@ import CalorieCalendar from '../../component/calendar/calendar';
 import './homepage-style.css';
 import Mealinputform from '../../component/forms/mealInputform/mealInputform';
 
-export default class homePage extends React.Component {
+export default class HomePage extends React.Component {
 	state = {
 		date: ''
 	};
