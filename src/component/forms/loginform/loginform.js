@@ -38,11 +38,11 @@ export default class LoginForm extends React.Component {
                 onSubmit={this.handleSubmitJwtAuth}
                 >
                     <div>
-                        <label for='user_name'>Email</label>
+                        <label htmlFor='user_name'>Email</label>
                         <input type='text' name='user_name' id='user_name' />
                     </div>
                     <div>
-                        <label for='password'>Password</label>
+                        <label htmlFor='password'>Password</label>
                         <input type='password' name='password' id='password' />
                     </div>
                     <button type='submit'>Login</button>

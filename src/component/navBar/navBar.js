@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import './navBar-style.css'
 
-export default class navBar extends Component{
+export default class NavBar extends Component{
     static defaultProps={
         onLogoutSuccess: ()=>{},
         token:{}

@@ -39,15 +39,15 @@ export default class RegForm extends React.Component {
         <section>
             <form className='register-form' onSubmit={this.handleSubmit}>
                 <div>
-                    <label for="name">Name</label>
+                    <label htmlFor="name">Name</label>
                     <input placeholder='Full Name' type="text" name='name' id='name' required />
                 </div>
                 <div>
-                    <label for="age">Age</label>
+                    <label htmlFor="age">Age</label>
                     <input placeholder='' type="text" name='age' id='age' />
                 </div>
                 <div>
-                    <label for="gender">Gender</label>
+                    <label htmlFor="gender">Gender</label>
                     <select id="gender" name="gender">
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -55,11 +55,11 @@ export default class RegForm extends React.Component {
                     </select>
                 </div>
                 <div>
-                    <label for="username">Email</label>
+                    <label htmlFor="username">Email</label>
                     <input type="text" name='user_name' id='user_name' />
                 </div>
                 <div>
-                    <label for="password">Password</label>
+                    <label htmlFor="password">Password</label>
                     <input type="password" name='password' id='password' />
                 </div>
                 <button type='submit'>Register</button>
