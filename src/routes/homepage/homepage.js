@@ -8,7 +8,7 @@ export default class homePage extends React.Component {
 		date: ''
 	};
 
-	getSelectedData = async (date) => {
+	getSelectedDate = async (date) => {
 		const selectedDate = await date;
 		this.setState({
 			date: selectedDate
@@ -16,20 +16,19 @@ export default class homePage extends React.Component {
 	};
 
 	render() {
-		let selectedDate = new Date(this.state.date);
-		console.log(selectedDate.toDateString());
+		let selectedDate = new Date(this.state.date);		
 		return (
 			<div className="home">
 				<h1>My Dashboard</h1>
 				<h2>
 					myCalories / Week = <p className="calorieTotal">9000</p>
-					{}
+					
 				</h2>
 				<h2>
 					myCalories / Month = <p className="calorieTotal">90000</p>
-					{}
+					
 				</h2>
-				<CalorieCalendar getSelectedData={this.getSelectedData} />
+				<CalorieCalendar getSelectedDate={this.getSelectedDate} />
 
 				{(selectedDate.toString() === 'Invalid Date') ? <h2> Select Date </h2> : <h2> {selectedDate.toDateString()} </h2>}
 
