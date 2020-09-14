@@ -12,16 +12,19 @@ export default class RegPage extends React.Component {
         const { history } = this.props
         history.push('/login')
     }
+    handleCancel= ()=>{
+        this.props.history.goBack()
+    }
 
     render() {
         return (
             <section>
                 <header role="banner" className="reg_page">
-                    <h1>Carb Counter</h1>
                     <h3>Sign up keep track of your calorie intake and stay fit!</h3>
                 </header>
                 <RegForm
                     onRegistrationSuccess={this.handleRegistrationSuccess}
+                    handleCancel= {this.handleCancel}
                 />
             </section>
         )
