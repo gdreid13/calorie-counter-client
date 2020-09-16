@@ -3,7 +3,7 @@ import LoginForm from '../../component/forms/loginform/loginform'
 // import { withRouter } from 'react-router-dom'
 import './loginpage-style.css';
 
-export default class loginPage extends React.Component {
+export default class LoginPage extends React.Component {
     static defaultProps = {
         location: {},
         history: {
@@ -29,4 +29,4 @@ export default class loginPage extends React.Component {
         </section>
         )
     }
-} 
+}
