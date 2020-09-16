@@ -1,5 +1,5 @@
 import React from 'react';
-//import AuthHelperService from '../../../services/AuthHelperService'
+import AuthHelperService from '../../../services/AuthHelperService'
 import './regForm-style.css'
 
 export default class RegForm extends React.Component {
@@ -15,7 +15,6 @@ export default class RegForm extends React.Component {
         ev.preventDefault()
         console.log('Form submitted')
         this.props.onRegistrationSuccess()
-        /*
         const { name, age, gender, user_name, password } = ev.target
         this.setState({ error: null })
         AuthHelperService.postUser({
@@ -36,7 +35,6 @@ export default class RegForm extends React.Component {
             .catch(res => {
                 this.setState({ error: res.message })
             })
-        */
     }
 
     render() {

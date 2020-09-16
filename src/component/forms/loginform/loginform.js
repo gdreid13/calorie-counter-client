@@ -1,6 +1,6 @@
 import React from 'react'
-//import TokenService from '../../../services/TokenService'
-//import AuthHelperService from '../../../services/AuthHelperService'
+import TokenService from '../../../services/TokenService'
+import AuthHelperService from '../../../services/AuthHelperService'
 import { Link } from 'react-router-dom';
 import './loginform-style.css'
 
@@ -20,7 +20,6 @@ export default class LoginForm extends React.Component {
     handleSubmitJwtAuth = ev => {
         ev.preventDefault()
         console.log('form submitted')
-        /*
         this.setState({ error: null })
         const { user_name, password } = ev.target
         const login = {
@@ -39,7 +38,6 @@ export default class LoginForm extends React.Component {
                 this.setState({ error: res.error })
                 alert(JSON.stringify(this.state.error))
             })
-        */
     }
 
     handleLoginReady=()=>this.setState({displayForm:1, usernameMessage:'',passwordMessage:''})
