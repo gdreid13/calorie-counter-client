@@ -8,7 +8,7 @@ import LoginPage from './routes/loginpage/loginpage';
 import NotFoundPage from './component/notfoundpage/notfoundpage';
 import Footer from './component/footer/footer';
 import { Route, Switch } from 'react-router-dom'
-
+import './app-style.css';
 export default class App extends Component {
   constructor() {
     super()
@@ -29,7 +29,7 @@ export default class App extends Component {
             <p className='red'>
               An unknown error has occurred.
           </p>}
-
+            <div className="content"> 
           <Switch>
             <Route
               exact
@@ -56,9 +56,9 @@ export default class App extends Component {
               component={(props) => <NotFoundPage {...props} />}
             />
           </Switch>
-
+            </div>
         </main>
-        <footer>
+        <footer className="footer">
           <Footer />
         </footer>
 

@@ -11,13 +11,13 @@
 }
 .app_nav {
     position: fixed; top:0; left:0; right:0; z-index: 10;
-    height: 60px;
+    height: 77px;
     border-bottom: solid; border-width: thin; border-color: rgb(109, 106, 106);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    background-color:  rgb(12, 10, 104); 
+    padding: 25px;
+    background-color:#283593 ; 
     color: white;
     overflow: hidden;
 }
@@ -28,7 +28,7 @@
     text-decoration: none;
 }
 .app_nav a:hover {
-    color: yellow;
+    color: rgb(250, 250, 250);
 }
 
 .app_nav h1{
