@@ -129,8 +129,7 @@ export default class LoginForm extends React.Component {
                 <div className='form_control'>
                     <button type='submit'>Login</button>
                 </div>
-                
-            </form>
+            </form>         
         )
     }
 
