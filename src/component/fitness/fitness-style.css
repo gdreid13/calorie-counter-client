@@ -17,13 +17,14 @@
 
 .fitness__image {
   height: 500px;
-  transition: transform 0.4s;
+  transition: ease-in-out 0.4s;
   border-radius: 4px;
 }
 
 .fitness__image:hover {
-  transform: scale(1.05);
-  opacity: 90%;
+  transform: scale(1.02);
+  transition: ease-in-out 0.5s;
+  
 }
 
 .imgContainer {
