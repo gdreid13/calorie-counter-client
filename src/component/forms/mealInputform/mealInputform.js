@@ -11,10 +11,6 @@ export default class mealInputform extends React.Component {
 		isLogged: true,
 	}
 
-	isLogged = (e) => {
-
-
-
 		getMealsAndCalories = (e) => {
 			e.preventDefault();
 			const { breakfast_food, breakfast_calorie, lunch_food, lunch_calorie, dinner_food, dinner_calorie } = e.target;
@@ -31,11 +27,11 @@ export default class mealInputform extends React.Component {
 					dinner_food: dinner_food.value,
 					dinner_calorie: dinner_calorie.value
 				}
-			};
+			}
 
 
-			console.log(MealsAndCalories);
-		};
+			console.log(MealsAndCalories)
+		}
 
 		render() {
 			return (
@@ -67,5 +63,4 @@ export default class mealInputform extends React.Component {
 			);
 		}
 	}
-}
 
