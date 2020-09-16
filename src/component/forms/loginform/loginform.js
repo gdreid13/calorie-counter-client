@@ -103,11 +103,41 @@ export default class LoginForm extends React.Component {
 
     renderLoginForm(){
         return (
+<<<<<<< HEAD
             <form>
                 <div>
                 <button type='submit'>Login</button>
                 </div>
             </form>
+=======
+            <form className='form Login-form' onSubmit={this.handleSubmitJwtAuth}>
+                <div>
+                    <input required type='text' name='user_name' id='user_name' placeholder='User name'/>
+                </div>
+                <div>
+                    <input required type='password' name='password' id='password' placeholder='password'/>
+                </div>
+                <div className='displayPassword'>
+                    <input type="checkbox" id="togglePassword"
+                    onClick={()=>{
+                        const password= document.getElementById('password')
+                        if(password.type==='password') password.type='text'
+                        else password.type='password'
+                    }}
+                    />
+                    <label htmlFor="togglePassword">show password</label> 
+                </div>
+                <div className='form_help'>
+                    <span onClick={this.handleForgotUsernameClicked}>Forgot username</span>{' | '}
+                    <span onClick={this.handleForgotPasswordClicked}>Forgot password</span>{' | '}
+                    <Link to={'/register'}>Register</Link>
+
+                </div>
+                <div className='form_control'>
+                    <button type='submit'>Login</button>
+                </div>
+            </form>         
+>>>>>>> 5d588999737b0629bb382c6a6ec93a757b25bbb1
         )
     }
 
