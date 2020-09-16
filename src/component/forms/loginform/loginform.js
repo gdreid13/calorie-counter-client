@@ -103,9 +103,10 @@ export default class LoginForm extends React.Component {
 
     renderLoginForm(){
         return (
-                    <button type='submit'>Login</button>
+            <form>
+                <div>
+                <button type='submit'>Login</button>
                 </div>
-                
             </form>
         )
     }
