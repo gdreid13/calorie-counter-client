@@ -8,12 +8,20 @@
     align-items: center;
     margin-bottom: 10px;
 }
-.form_input label {
+.form_input label, .form_input header {
     width: 30%;
     text-align: left;
 }
 .form_input input {
     width: 60%;
+}
+.biometric {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+.biometric input {
+    width: 30%;
 }
 
 .form_control {

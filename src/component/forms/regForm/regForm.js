@@ -45,16 +45,20 @@ export default class RegForm extends React.Component {
                     <input placeholder='Full Name' type="text" name='name' id='name' />
                 </div>
                 <div className='form_input'>
-                    <label htmlFor="age">Age</label>
-                    <input placeholder='Enter your age between 18 to 100' type="number" name='age' id='age' min='18'max='100' />
-                </div>
-                <div className='form_input'>
-                    <label htmlFor="username">Email</label>
+                    <label htmlFor="username">Email/Username</label>
                     <input type="text" name='user_name' id='user_name' />
                 </div>
                 <div className='form_input'>
                     <label htmlFor="password">Password</label>
                     <input type="password" name='password' id='password' />
+                </div>
+                <div className='form_input'>
+                    <header>Biometric:</header>
+                    <div className='biometric'>
+                        <input placeholder='Age' type="text" name='age' id='age' />
+                        <input placeholder='Height (in)' type="text" name='height' id='height' />
+                        <input placeholder='Weight (lbs)' type="text" name='weight' id='weight' />
+                    </div>
                 </div>
                 <div className='form_input'>
                     <label htmlFor="gender">Gender</label>
