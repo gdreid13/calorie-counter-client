@@ -103,6 +103,13 @@ export default class LoginForm extends React.Component {
 
     renderLoginForm(){
         return (
+<<<<<<< HEAD
+            <form>
+                <div>
+                <button type='submit'>Login</button>
+                </div>
+            </form>
+=======
             <form className='form Login-form' onSubmit={this.handleSubmitJwtAuth}>
                 <div>
                     <input required type='text' name='user_name' id='user_name' placeholder='User name'/>
@@ -130,6 +137,7 @@ export default class LoginForm extends React.Component {
                     <button type='submit'>Login</button>
                 </div>
             </form>         
+>>>>>>> 5d588999737b0629bb382c6a6ec93a757b25bbb1
         )
     }
 
