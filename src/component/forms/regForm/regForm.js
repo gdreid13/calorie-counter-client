@@ -1,5 +1,5 @@
 import React from 'react';
-//import AuthHelperService from '../../../services/AuthHelperService'
+import AuthHelperService from '../../../services/AuthHelperService'
 import './regForm-style.css'
 
 export default class RegForm extends React.Component {

@@ -1,6 +1,6 @@
 import React from 'react'
-//import TokenService from '../../../services/TokenService'
-//import AuthHelperService from '../../../services/AuthHelperService'
+import TokenService from '../../../services/TokenService'
+import AuthHelperService from '../../../services/AuthHelperService'
 import { Link } from 'react-router-dom';
 import './loginform-style.css'
 
