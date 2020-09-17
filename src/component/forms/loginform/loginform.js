@@ -19,8 +19,7 @@ export default class LoginForm extends React.Component {
 
     handleSubmitJwtAuth = ev => {
         ev.preventDefault()
-        console.log('form submitted')
-        this.setState({ error: null })
+        //this.setState({ error: null })
         const { user_name, password } = ev.target
         const login = {
             user_name: user_name.value,

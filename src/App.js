@@ -1,22 +1,63 @@
 import React, { Component } from 'react'
-import NavBar from './component/navBar/navBar';
+import { Route, Switch } from 'react-router-dom'
+import TokenService from '../src/services/TokenService'
+import {GeneralApiServices} from '../src/services/api-service'
+import './app-style.css';
+
+
+//IMPORT ROUTES:
 import HomePage from './routes/homepage/homepage';
 import LandingPage from './routes/landingpage/landingpage';
 import RegistrationPage from './routes/regPage/regPage';
 import FitnessTipsPage from './component/fitness/fitness';
 import LoginPage from './routes/loginpage/loginpage';
 import NotFoundPage from './component/notfoundpage/notfoundpage';
+
+
+//IMPORT COMPONENTS:
+import NavBar from './component/navBar/navBar';
 import Footer from './component/footer/footer';
-import { Route, Switch } from 'react-router-dom'
-import './app-style.css';
+//import LoginForm from './component/forms/loginform/loginform'
+//import RegForm from './component/forms/regForm/regForm'
+//
+
 export default class App extends Component {
   constructor() {
     super()
     this.state = {
       hasError: false,
+      hasAuthToken: TokenService.hasAuthToken(),
+      userid: '',
+      isAdmin: false,
+      user_name:''
     }
   }
+  componentDidMount(){
+    const authToken= TokenService.getAuthToken()
+    if (authToken) this.handleLoginSuccess()
+  }
 
+  handleLoginSuccess = ()=>{
+    const authToken=TokenService.getAuthToken()
+    const userid=TokenService.parseJwt(authToken).userid
+    GeneralApiServices.getItemById('users',userid)
+      .then(user=>this.setState({
+        hasAuthToken: TokenService.hasAuthToken(),
+        isAdmin: user.isAdmin,
+        userid: userid,
+        user_name: user.user_name
+      }))
+  }
+
+  handleLogoutSuccess = ()=>{
+    TokenService.clearAuthToken()
+    this.setState({
+      hasAuthToken: TokenService.hasAuthToken(),
+      isAdmin: false,
+      userid:'',
+      user_name: ''
+    })
+  }
   render() {
     return (
       <div className="App">
