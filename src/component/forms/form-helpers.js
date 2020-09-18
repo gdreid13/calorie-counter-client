@@ -57,24 +57,52 @@ export function BiometricComponent(){
         <div className='form_input'>
             <header>Biometric:</header>
             <div className='biometric'>
-                <input placeholder='Age' type="text" name='age' id='age' />
-                <input placeholder='Height (in)' type="text" name='height' id='height' />
-                <input placeholder='Weight (lbs)' type="text" name='weight' id='weight' />
+                <input placeholder='Age' type="number" name='age' id='age' min='5'max='125'/>
+                <input placeholder='Height (in)' type="number" name='height' id='height'min='40'max='105'/>
+                <input placeholder='Weight (lb)' type="number" name='weight' id='weight' min='30'max='900'/>
             </div>
         </div>
     )
 }
 
 export function BiometricSelection(){
-    const ageOptions=()=>{
-
+    const createArray=(from,to)=>{
+        let array=[]
+        for (let i=from; i<=to;i++){
+            array.push[i]
+        }
+        return array
     }
-    const weightOption=()=>{
-
+    const ageOptions=()=>{
+        const array= createArray(5,125)
+        const options= array.map((i)=><option key={i} value={i}>{i}</option>)
+        return (
+            <select id="age" name="age">
+                {options}
+            </select>
+        )
+    }
+    const weightOptions=()=>{
+        const array= createArray(30,900)
+        const options= array.map((i)=><option key={i} value={i}>{i}</option>)
+        return (
+            <select id="weight" name="weight">
+                {options}
+            </select>
+        )
     }
     const heightOptions=()=>{
-
+        const array= createArray(40,105)
+        const options= array.map((i)=><option key={i} value={i}>{i}</option>)
+        return (
+            <select id="height" name="height">
+                {options}
+            </select>
+        )
     }
+    const age= ageOptions()
+    const weight= weightOptions()
+    const height= heightOptions()
     return (
         <div className='bio_select'>
             <h3>Biometric</h3>
@@ -88,21 +116,15 @@ export function BiometricSelection(){
             </div>
             <div>
                 <header>Age</header>
-                <select>
-
-                </select>
+                {age}
             </div>
             <div>
                 <header>Weight</header>
-                <select>
-
-                </select>
+                {weight}
             </div>
             <div>
                 <header>Height</header>
-                <select>
-
-                </select>
+                {height}
             </div>
         </div>
     )
