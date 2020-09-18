@@ -3,23 +3,14 @@ import { Route, Switch } from 'react-router-dom'
 import TokenService from '../src/services/TokenService'
 import {GeneralApiServices} from '../src/services/api-service'
 import './app-style.css';
-
-
-//IMPORT ROUTES:
 import HomePage from './routes/homepage/homepage';
 import LandingPage from './routes/landingpage/landingpage';
 import RegistrationPage from './routes/regPage/regPage';
 import FitnessTipsPage from './component/fitness/fitness';
 import LoginPage from './routes/loginpage/loginpage';
 import NotFoundPage from './component/notfoundpage/notfoundpage';
-
-
-//IMPORT COMPONENTS:
 import NavBar from './component/navBar/navBar';
 import Footer from './component/footer/footer';
-//import LoginForm from './component/forms/loginform/loginform'
-//import RegForm from './component/forms/regForm/regForm'
-//
 
 export default class App extends Component {
   constructor() {
@@ -62,7 +53,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <nav className="App-nav">
-          <NavBar />
+          <NavBar isLoggedIn = {this.state.hasAuthToken} />
         </nav>
 
         <main className="App_main">
