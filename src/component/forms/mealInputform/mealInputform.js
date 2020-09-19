@@ -1,5 +1,5 @@
 import React from 'react';
-import LogButton from '../Button'
+// import LogButton from '../Button'
 
 export default class mealInputform extends React.Component {
 	static defaultProps = {
@@ -42,7 +42,7 @@ export default class mealInputform extends React.Component {
 							<input placeholder="Meal" type="text" name="breakfast_food" id="breakfast_food" />
 							<label htmlFor="breakfast_calorie">Calories</label>
 							<input placeholder="Calories" type="text" name="breakfast_calorie" id="breakfast_calorie" />
-						
+							<button type="submit">Log</button>
 						</div>
 						<div>
 							<label htmlFor="lunch_food">Lunch</label>
