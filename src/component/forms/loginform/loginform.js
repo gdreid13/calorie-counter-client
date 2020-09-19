@@ -1,6 +1,7 @@
 import React from 'react';
 import TokenService from '../../../services/TokenService';
 import AuthHelperService from '../../../services/AuthHelperService';
+import {GeneralApiServices} from '../../../services/api-service'
 import { Link } from 'react-router-dom';
 import './loginform-style.css';
 
@@ -17,7 +18,13 @@ export default class LoginForm extends React.Component {
 		displayForm: 1,
 		usernamMessage: '',
 		passwordMessage: ''
-	};
+    };
+    
+    componentDidMount(){
+        GeneralApiServices.getAllItems('users').then(json=>{
+            this.setState({userList:json})
+        })
+    }
 
 	handleSubmitJwtAuth = (ev) => {
 		ev.preventDefault();
@@ -52,10 +59,10 @@ export default class LoginForm extends React.Component {
 		const full = full_name.value.toLowerCase();
 		const user = this.state.userList.find((u) => {
 			const full_name = u.full_name.toLowerCase();
-			return full_name === full && u.age === Number(age.value);
+			return full_name === full && Number(u.age) === Number(age.value);
 		});
 		const message = user
-			? `Hooray, we found you. Your username is ${user.username}`
+			? `Hooray, we found you. Your username is ${user.user_name}`
 			: `Sorry, we cound not find your information. Please try it again!`;
 		this.setState({ usernameMessage: message });
 	};
@@ -64,7 +71,7 @@ export default class LoginForm extends React.Component {
 		this.setState({ passwordMessage: `Your password has been reset and sent to your email on file.` });
 	};
 	renderForgotUserNameForm() {
-		const message = this.state.usernameMessage ? <span className="error">{this.state.usernameMessage}</span> : '';
+		const message = this.state.usernameMessage ? <div className="message">{this.state.usernameMessage}</div> : '';
 		return (
 			<form className="form" onSubmit={this.handleForgotUsernameSubmitted}>
 				<h3>Let's help find your username</h3>
@@ -87,9 +94,9 @@ export default class LoginForm extends React.Component {
 	renderForgotPasswordForm() {
 		const { passwordMessage } = this.state;
 		//const boolean= (passwordMessage)? true: false
-		const message = passwordMessage ? <span className="error">{passwordMessage}</span> : '';
+		const message = passwordMessage ? <div className="message">{passwordMessage}</div> : '';
 		return (
-			<form className="form" onSubmit={this.handleForgotPasswordSubmitted}>
+			<form className="form" onSubmit={this.handleForgotPasswordSubmitted} >
 				<h3>Reset your password</h3>
 				<div>
 					<header>Enter your username/email:</header>
@@ -113,7 +120,7 @@ export default class LoginForm extends React.Component {
 			<form className="form Login-form" onSubmit={this.handleSubmitJwtAuth}>
 				<input required type="text" name="user_name" id="user_name" placeholder="User name" />
 
-				<input required type="password" name="password" id="password" placeholder="password" />
+				<input required type="password" name="password" id="password" placeholder="password" autoComplete="off"/>
 
 				<div className="displayPassword">
 					<input

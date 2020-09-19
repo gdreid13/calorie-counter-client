@@ -109,7 +109,7 @@ export default class RegForm extends React.Component {
                 {user_name.touch && <ValidationError message={usernameError} />}
                 <div className='form_input'>
                     <label htmlFor="password">Password</label>
-                    <input type="password" name='password' id='password' onChange={this.onChange}/>
+                    <input type="password" name='password' id='password' onChange={this.onChange} autoComplete="off"/>
                 </div>
                 {password.touch && <ValidationError message={passwordError}/>}
                 <BiometricComponent />

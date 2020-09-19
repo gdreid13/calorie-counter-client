@@ -1,5 +1,5 @@
 import React from 'react';
-import LogButton from '../Button'
+//import LogButton from '../Button'
 
 export default class mealInputform extends React.Component {
 	static defaultProps = {
