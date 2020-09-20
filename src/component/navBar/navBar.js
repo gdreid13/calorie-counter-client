@@ -22,7 +22,7 @@ export default class NavBar extends Component{
         return(
             <div className='Header-logged-in' onClick={this.closeDropdown}>
                 <Link onClick={this.props.onLogoutSuccess} to='/'aria-label='logout'>Logout</Link>
-                <Link to={'/users/'+this.props.token.userid} className='blue'aria-label='home-page'>{this.props.token.user_name}</Link>
+                <Link to={'/users/'+this.props.token.userid} className='blue'aria-label='home-page'>{this.props.token.full_name}</Link>
                 {this.props.token.isAdmin && <Link to='/admin'aria-label='admin-page'> Admin</Link> }
             </div>
         )
@@ -30,7 +30,7 @@ export default class NavBar extends Component{
     renderLoginLink(){
         return(
             <div className='Header-not-logged-in' onClick={this.closeDropdown}>
-                <Link to='/login' aria-label='login-page'><FontAwesomeIcon icon='signinalt'/>Login </Link>
+                <Link to='/login' aria-label='login-page'>Login </Link>
                 <Link to='/register' aria-label='registration-page' > Sign Up</Link>
                 <Link to='/fitnesstips' aria-label='fitness-tips'>Fitness Tips</Link>
                 {this.props.token.isAdmin && <Link to='/admin'aria-label='admin-page'> Admin</Link> }

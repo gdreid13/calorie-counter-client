@@ -20,7 +20,7 @@ export default class App extends Component {
       hasAuthToken: TokenService.hasAuthToken(),
       userid: '',
       isAdmin: false,
-      user_name:''
+      full_name:''
     }
   }
   componentDidMount(){
@@ -32,13 +32,13 @@ export default class App extends Component {
 
   handleLoginSuccess = ()=>{
     const authToken=TokenService.getAuthToken()
-    const userid=TokenService.parseJwt(authToken).userid
+    const userid=TokenService.parseJwt(authToken).user_id
     GeneralApiServices.getItemById('users',userid)
       .then(user=>this.setState({
         hasAuthToken: TokenService.hasAuthToken(),
         isAdmin: user.isAdmin,
         userid: userid,
-        user_name: user.user_name
+        full_name: user.full_name
       }))
   }
 
@@ -48,14 +48,14 @@ export default class App extends Component {
       hasAuthToken: TokenService.hasAuthToken(),
       isAdmin: false,
       userid:'',
-      user_name: ''
+      full_name: ''
     })
   }
   render() {
     return (
       <div className="App">
         <nav className="App-nav">
-          <NavBar isLoggedIn = {this.state.hasAuthToken} />
+          <NavBar token = {this.state} onLogoutSuccess={this.handleLogoutSuccess}/>
         </nav>
 
         <main className="App_main">
@@ -80,7 +80,7 @@ export default class App extends Component {
             />
             <Route
               path={'/login'}
-              component={(props) => <LoginPage {...props} />}
+              component={(props) => <LoginPage {...props} loginUpdate={this.handleLoginSuccess}/>}
             />
             <Route
               path={'/fitnesstips'}
