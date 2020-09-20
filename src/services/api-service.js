@@ -1,6 +1,6 @@
 import config from '../config'
 
-export const GeneralApiServices= {
+export const GeneralApiServices = {
     getAllItems(dbName){
         return fetch(`${config.API_ENDPOINT}/${dbName}`, {
             headers: {
