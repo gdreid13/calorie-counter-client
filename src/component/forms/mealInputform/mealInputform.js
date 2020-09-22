@@ -1,39 +1,82 @@
-import React from 'react';
+import React from 'react'
+import { GeneralApiServices } from '../../../services/api-service'
+// import LogButton from '../Button'
 
 export default class mealInputform extends React.Component {
-    static defaultProps = {
-        history: {
-            push: () => { },
-        }
-    }
+	static defaultProps = {
+		history: {
+			push: () => { },
+		},
+		userId: 1 // kludge to pass userId to this component, delete when fixed
+	};
 
-    render() {
-        return (
-            <section className="meal_entry">
-                <form class='user__carb-form'>
-                    <div>
-                        <label for="breakfast_food">Breakfast</label>
-                        <input placeholder='Meal' type="text" name='breakfast_food' id='breakfast_food' />
-                        <label for="breakfast_calorie">Calories</label>
-                        <input placeholder='Calories' type="text" name='breakfast_calorie' id='breakfast_calorie' />
-                        <button type='submit'>Log</button>
-                    </div>
-                    <div>
-                        <label for="lunch_food">Lunch</label>
-                        <input placeholder='Meal' type="text" name='lunch_food' id='lunch_food' />
-                        <label for="lunch_calorie">Calories</label>
-                        <input placeholder='Calories' type="text" name='lunch_calorie' id='lunch_calorie' />
-                        <button type='submit'>Log</button>
-                    </div>
-                    <div>
-                        <label for="dinner_food">Dinner</label>
-                        <input placeholder='Meal' type="text" name='dinner_food' id='dinner_food' />
-                        <label for="dinner_calorie">Calories</label>
-                        <input placeholder='Calories' type="text" name='dinner_calorie' id='dinner_calorie' />
-                        <button type='submit'>Log</button>
-                    </div>
-                </form>
-            </section>
-        )
-    }
+	state = {
+		isLogged: true,
+	}
+
+	onMealsSubmit() {
+		console.log('Submit successful!')
+	}
+
+	getMealsAndCalories = (e) => {
+		let db = 'meals'
+		let userId = this.props.userId
+		e.preventDefault();
+		const {
+			breakfast_food,
+			breakfast_calories,
+			lunch_food,
+			lunch_calories,
+			dinner_food,
+			dinner_calories } = e.target;
+		const MealsAndCalories = {
+			userid: userId,
+			breakfast_food: breakfast_food.value,
+			breakfast_calories: breakfast_calories.value,
+			lunch_food: lunch_food.value,
+			lunch_calories: lunch_calories.value,
+			dinner_food: dinner_food.value,
+			dinner_calories: dinner_calories.value,
+		}
+		console.log(MealsAndCalories)
+		GeneralApiServices.postItem(db, MealsAndCalories)
+			.then((res) => {
+				this.onMealsSubmit();
+			})
+			.catch((res) => {
+				this.setState({ error: res.error });
+				alert(JSON.stringify(this.state.error));
+			});
+	}
+
+	render() {
+		return (
+			<section className="meal_entry">
+				<form className="user__carb-form" onSubmit={this.getMealsAndCalories}>
+					<div>
+						<label htmlFor="breakfast_food">Breakfast</label>
+						<input placeholder="Meal" type="text" name="breakfast_food" id="breakfast_food" />
+						<label htmlFor="breakfast_calories">Calories</label>
+						<input placeholder="Calories" type="text" name="breakfast_calories" id="breakfast_calorie" />
+						<button type="submit">Log</button>
+					</div>
+					<div>
+						<label htmlFor="lunch_food">Lunch</label>
+						<input placeholder="Meal" type="text" name="lunch_food" id="lunch_food" />
+						<label htmlFor="lunch_calories">Calories</label>
+						<input placeholder="Calories" type="text" name="lunch_calories" id="lunch_calorie" />
+						<button type="submit">Log</button>
+					</div>
+					<div>
+						<label htmlFor="dinner_food">Dinner</label>
+						<input placeholder="Meal" type="text" name="dinner_food" id="dinner_food" />
+						<label htmlFor="dinner_calories">Calories</label>
+						<input placeholder="Calories" type="text" name="dinner_calories" id="dinner_calorie" />
+						<button type="submit">Log</button>
+					</div>
+				</form>
+			</section>
+		);
+	}
 }
+

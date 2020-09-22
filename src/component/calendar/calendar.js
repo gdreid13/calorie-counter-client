@@ -17,7 +17,7 @@ export default class CalorieCalendar extends React.Component {
 			<div>
 				<Calendar className="react-calendar"
 				value={this.state.date} 
-				onChange={(date) => console.log(date)} />
+				onChange={(date) => this.props.getSelectedDate(date)} />
 			</div>
 		);
 	}

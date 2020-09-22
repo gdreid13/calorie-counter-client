@@ -1,27 +1,61 @@
 import React, { Component } from 'react'
-import NavBar from './component/navBar/navBar';
+import { Route, Switch } from 'react-router-dom'
+import TokenService from '../src/services/TokenService'
+import {GeneralApiServices} from '../src/services/api-service'
+import './app-style.css';
 import HomePage from './routes/homepage/homepage';
 import LandingPage from './routes/landingpage/landingpage';
 import RegistrationPage from './routes/regPage/regPage';
 import FitnessTipsPage from './component/fitness/fitness';
 import LoginPage from './routes/loginpage/loginpage';
 import NotFoundPage from './component/notfoundpage/notfoundpage';
+import NavBar from './component/navBar/navBar';
 import Footer from './component/footer/footer';
-import { Route, Switch } from 'react-router-dom'
 
 export default class App extends Component {
   constructor() {
     super()
     this.state = {
       hasError: false,
+      hasAuthToken: TokenService.hasAuthToken(),
+      userid: '',
+      isAdmin: false,
+      full_name:''
+    }
+  }
+  componentDidMount(){
+    const authToken= TokenService.getAuthToken()
+    if (authToken) {
+      this.handleLoginSuccess()
     }
   }
 
+  handleLoginSuccess = ()=>{
+    const authToken=TokenService.getAuthToken()
+    const userid=TokenService.parseJwt(authToken).user_id
+    GeneralApiServices.getItemById('users',userid)
+      .then(user=>this.setState({
+        hasAuthToken: TokenService.hasAuthToken(),
+        isAdmin: user.isAdmin,
+        userid: userid,
+        full_name: user.full_name
+      }))
+  }
+
+  handleLogoutSuccess = ()=>{
+    TokenService.clearAuthToken()
+    this.setState({
+      hasAuthToken: TokenService.hasAuthToken(),
+      isAdmin: false,
+      userid:'',
+      full_name: ''
+    })
+  }
   render() {
     return (
       <div className="App">
         <nav className="App-nav">
-          <NavBar />
+          <NavBar token = {this.state} onLogoutSuccess={this.handleLogoutSuccess}/>
         </nav>
 
         <main className="App_main">
@@ -29,7 +63,7 @@ export default class App extends Component {
             <p className='red'>
               An unknown error has occurred.
           </p>}
-
+            <div className="content"> 
           <Switch>
             <Route
               exact
@@ -46,7 +80,7 @@ export default class App extends Component {
             />
             <Route
               path={'/login'}
-              component={(props) => <LoginPage {...props} />}
+              component={(props) => <LoginPage {...props} loginUpdate={this.handleLoginSuccess}/>}
             />
             <Route
               path={'/fitnesstips'}
@@ -56,9 +90,9 @@ export default class App extends Component {
               component={(props) => <NotFoundPage {...props} />}
             />
           </Switch>
-
+            </div>
         </main>
-        <footer>
+        <footer className="footer">
           <Footer />
         </footer>
 
