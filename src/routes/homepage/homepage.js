@@ -5,7 +5,7 @@ import Mealinputform from '../../component/forms/mealInputform/mealInputform';
 
 export default class HomePage extends React.Component {
 	state = {
-		date: ''
+		date: new Date()
 	};
 
 	getSelectedDate = async (date) => {
@@ -16,7 +16,7 @@ export default class HomePage extends React.Component {
 	};
 
 	render() {
-		let selectedDate = new Date(this.state.date);		
+		let selectedDate = new Date(this.state.date);	
 		return (
 			<div className="home">
 				<h1>My Dashboard</h1>
@@ -32,7 +32,7 @@ export default class HomePage extends React.Component {
 
 				{(selectedDate.toString() === 'Invalid Date') ? <h2> Select Date </h2> : <h2> {selectedDate.toDateString()} </h2>}
 
-				<Mealinputform />
+				<Mealinputform selectedDate={selectedDate} userId={this.props.userId}/>
 			</div>
 		);
 	}

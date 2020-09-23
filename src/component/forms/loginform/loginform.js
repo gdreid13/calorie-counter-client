@@ -28,7 +28,7 @@ export default class LoginForm extends React.Component {
 
 	handleSubmitJwtAuth = (ev) => {
 		ev.preventDefault();
-		console.log('form submitted');
+		//console.log('form submitted');
 		this.setState({ error: null });
 		const { user_name, password } = ev.target;
 		const login = {
@@ -44,8 +44,8 @@ export default class LoginForm extends React.Component {
 				this.props.onLoginSuccess();
 			})
 			.catch((res) => {
-				this.setState({ error: res.error });
-				alert(JSON.stringify(this.state.error));
+				this.setState({ error: res.message });
+				//alert(JSON.stringify(this.state.error));
 			});
 	};
 
@@ -147,7 +147,7 @@ export default class LoginForm extends React.Component {
 			</form>
 		);
 	}
-
+	// 
 	render() {
 		const { error, displayForm } = this.state;
 		const form =
@@ -158,8 +158,8 @@ export default class LoginForm extends React.Component {
 					: displayForm === 3 ? this.renderForgotPasswordForm() : '';
 		return (
 			<div id="help-me-login">
-				<div role="alert">{error && <p className="error">{error}</p>}</div>
 				{form}
+				{error && <p>{error}</p>}
 			</div>
 		);
 	}
