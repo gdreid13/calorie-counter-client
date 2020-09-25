@@ -3,21 +3,27 @@ import Calendar from 'react-calendar';
 import './react-calendar.scss';
 
 export default class CalorieCalendar extends React.Component {
-
 	state = {
 		date: new Date(),
-		currentDate: '',
+		currentDate: ''
 		// hover:new Date(),
-    };
-    
+	};
 
-    
 	render() {
 		return (
 			<div>
-				<Calendar className="react-calendar"
-				value={this.state.date} 
-				onChange={(date) => this.props.getSelectedDate(date)} />
+				<Calendar
+					className="react-calendar"
+					value={this.state.date}
+					onActiveStartDateChange={(date) => {				
+						
+						this.props.getMealInfoByMonth(date);
+					}}
+					onChange={(date) => {						
+						this.props.getSelectedDate(date);
+						this.props.getMealInfoOfTheDay();
+					}}
+				/>
 			</div>
 		);
 	}

@@ -158,7 +158,7 @@ export default class LoginForm extends React.Component {
 					: displayForm === 3 ? this.renderForgotPasswordForm() : '';
 		return (
 			<div id="help-me-login">
-				<div role="alert">{error && <p className="error">{error}</p>}</div>
+				<div role="alert">{error && <p className="error">{"Error"}</p>}</div>
 				{form}
 			</div>
 		);
