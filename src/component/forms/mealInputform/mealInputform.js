@@ -10,7 +10,8 @@ export default class mealInputform extends React.Component {
 			push: () => { },
 			selectedDate: new Date()
 		},
-		currentMealInfo: {}
+		currentMealInfo: {},
+		userId:''
 	};
 	
 	state = {
@@ -19,63 +20,36 @@ export default class mealInputform extends React.Component {
 			id:'', alldaycalories:0,
 			breakfast_food:'',breakfast_calories:0,
 			lunch_food:'',lunch_calories:0,
-			dinner_food:'',dinner_calories:0,	
+			dinner_food:'',dinner_calories:0,
 		},
-		displayMessage: false,
+		error:'',
 	}
 
-	componentDidMount(){
+	updateCurrentMeal = () =>{
 		const {currentMealInfo}= this.props
+		const defaultMeal= {
+			id:'', alldaycalories:0,
+			breakfast_food:'',breakfast_calories:0,
+			lunch_food:'',lunch_calories:0,
+			dinner_food:'',dinner_calories:0,
+		}
 		if (currentMealInfo.id) {
 			this.setState({meal: currentMealInfo})
 		}
+		else this.setState({meal: defaultMeal})
 	}
 
+	componentDidMount(){
+		this.updateCurrentMeal()
+	}
+	componentDidUpdate(prevProps){
+		if (this.props.currentMealInfo !== prevProps.currentMealInfo){
+			this.updateCurrentMeal()
+		}
+	}
 	
-
-	onMealsSubmit= e=> {
-		e.preventDefault();
-		const { breakfast_food,breakfast_calories,lunch_food,lunch_calories,dinner_food,dinner_calories } = e.target;
-		const total= Number(breakfast_calories.value)+Number(lunch_calories.value)+Number(dinner_calories.value)
-		const mealData={
-			breakfast_food: breakfast_food.value,
-			breakfast_calories: breakfast_calories.value,
-			lunch_food: lunch_food.value,
-			lunch_calories: lunch_calories.value,
-			dinner_food: dinner_food.value,
-			dinner_calories: dinner_calories.value,
-			alldaycalories: total
-		}
-		
-		const {userId,selectedDate, currentMealInfo} = this.props
-		const {id}= currentMealInfo
-		const date= moment(selectedDate).format('YYYY-MM-DD')
-		
-		if (id){
-			console.log(mealData)
-			/*
-			GeneralApiServices.patchItemById('meals',id,mealData)
-				.then(meal => {
-					
-
-				}).catch(res => console.log(res.message))*/
-		}
-		else {
-			mealData.userid= userId
-			mealData.dateofmeal= date;
-			console.log(mealData)
-			/*
-			GeneralApiServices.postItem('meals',mealData)
-				.then(meal => {
-					this.props.onAddMealSuccess()
-
-				}).catch(res => console.log(res.message))*/
-		}
-	}
-
 	getMealsAndCalories = (e) => {
 		e.preventDefault();
-		/*
 		const {
 			breakfast_food,
 			breakfast_calories,
@@ -83,9 +57,11 @@ export default class mealInputform extends React.Component {
 			lunch_calories,
 			dinner_food,
 			dinner_calories } = e.target;
+		
+		const total= Number(breakfast_calories.value)+Number(lunch_calories.value)+Number(dinner_calories.value)
+
 		const MealsAndCalories = {
-			userid: userId,
-			dateofmeal: date,
+			alldaycalories: total,
 			breakfast_food: breakfast_food.value,
 			breakfast_calories: breakfast_calories.value,
 			lunch_food: lunch_food.value,
@@ -93,19 +69,35 @@ export default class mealInputform extends React.Component {
 			dinner_food: dinner_food.value,
 			dinner_calories: dinner_calories.value,
 		}
-		console.log(MealsAndCalories)*/
-		/*
-		GeneralApiServices.postItem('meals', MealsAndCalories)
-			.then((res) => {
-				this.onMealsSubmit();
-			})
-			.catch((res) => {
-				this.setState({ error: res.error });
-				alert(JSON.stringify(this.state.error));
-			});
-		*/
-	}
 
+		//console.log(MealsAndCalories)
+		const {userId,selectedDate,currentMealInfo,onAddMealSuccess} = this.props
+		const {id}= currentMealInfo
+		const date= moment(selectedDate).format('YYYY-MM-DD')
+
+		if (userId) {
+			if(id) {
+				GeneralApiServices.patchItemById('meals',id,MealsAndCalories)
+					.then(meal => {
+						onAddMealSuccess()
+					}).catch(res => console.log(res.message))
+			}
+			else {
+				MealsAndCalories.userid= userId
+				MealsAndCalories.dateofmeal= date;
+				GeneralApiServices.postItem('meals', MealsAndCalories)
+					.then((res) => {
+						onAddMealSuccess()
+					})
+					.catch((res) => {
+						this.setState({ error: res.message });
+						alert(JSON.stringify(this.state.error));
+					});
+			}
+		}
+		else this.setState({error:'You have to login to track your calories'})
+	}
+	
 	onChange= e=>{
 		const {name,value}= e.target
 		//this.setState({[key]:newValue})
@@ -116,8 +108,10 @@ export default class mealInputform extends React.Component {
 		const {meal}=this.state
 		return (
 			<div className='meal_entries'>
-				<input type='text'  placeholder={food} name={food} value={meal.food} onChange={this.onChange}/>
-				<input type='number'placeholder={calorie} name={calorie} value={meal.calorie} onChange={this.onChange}/>
+				<input type='text' placeholder={food} name={food} 
+					value={meal[`${food}`]} onChange={this.onChange}/>
+				<input type='number'placeholder={calorie} name={calorie} 
+					value={meal[`${calorie}`]} onChange={this.onChange}/>
 			</div>
 		)
 	}
@@ -126,16 +120,18 @@ export default class mealInputform extends React.Component {
 		const breakfast= this.renderCalorieForm('breakfast_food','breakfast_calories')
 		const lunch= this.renderCalorieForm('lunch_food','lunch_calories')
 		const dinner= this.renderCalorieForm('dinner_food','dinner_calories')
+		const {error}= this.state
 
 		return(
-			<form className="user__carb-form" onSubmit={this.onMealsSubmit}>
+			<form className="user__carb-form" onSubmit={this.getMealsAndCalories}>
 				{breakfast}
 				{lunch}
 				{dinner}
 				<div className="form_control">
-					<button type="button">Reset</button>
+					<button type="button" onClick={this.props.onAddMealSuccess}>Reset</button>
 					<button type="submit">Submit</button>
 				</div>
+				{error && <div className='user__carb-form-error'>{error}</div>}
 			</form>
 		)
 	}

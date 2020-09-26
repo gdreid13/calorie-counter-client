@@ -8,8 +8,8 @@ export default class CalorieCalendar extends React.Component {
 		date: new Date(),
 		currentDate: '',
 		// hover:new Date(),
-    };
-    
+	};
+	
 	render() {
 		const {getMealInfoByMonth,getSelectedDate,getMealInfoOfTheDay}= this.props
 		return (

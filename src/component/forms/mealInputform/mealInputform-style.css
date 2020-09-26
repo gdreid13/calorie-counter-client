@@ -23,3 +23,8 @@
     background-color: green;
     color: white;
 }
+.user__carb-form-error{
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}

@@ -16,12 +16,6 @@ export default class HomePage extends React.Component {
 		caloriesOfTheWeeks: 0
 	};
 
-	componentDidMount(){
-		const {userId} = this.props
-		MealApiServices.getMealsByUser(userId)
-			.then(array=>this.setState({allMeals: array}))
-			.then(()=>this.updateCurrentMeal())	
-	}
 	updateCurrentMeal=()=>{
 		const {allMeals,date}= this.state
 		const format = (date) => moment(date).format('YYYY-MM-DD')
@@ -32,13 +26,32 @@ export default class HomePage extends React.Component {
 		else this.setState({currentMealInfo:{}})		
 	}
 
+	updateMeals= ()=>{
+		const {userId} = this.props
+		MealApiServices.getMealsByUser(userId)
+			.then(array=>this.setState({allMeals: array}))
+			.then(()=>this.updateCurrentMeal())	
+	}
+
+	highlightDate= ()=>{
+		
+	}
+
+	componentDidMount(){
+		this.updateMeals()
+	}
+
+	onMealSuccess=()=>{
+		this.updateMeals()
+		this.setState({date: new Date()})
+	}
+
 	getSelectedDate = async (d) => {
 		const selectedDate = await d;
 		this.setState({
 			date: new Date(selectedDate).toISOString(),	
 		});
 		this.updateCurrentMeal()
-		
 		/*
 		const {mealsInfoOfTheMonth,date}= this.state
 		const currentMeal = mealsInfoOfTheMonth.filter((meal) => meal.dateofmeal.slice(0,10)===date.slice(0,10));
@@ -66,7 +79,9 @@ export default class HomePage extends React.Component {
 				this.setState({ caloriesOfTheMonth: calorieCounterForTheMonth });
 			});
 	};
+
 	getMealInfoOfTheDay = ()=>{};
+
 	render() {
 		const {date,mealsInfoOfTheMonth,currentMealInfo}= this.state
 		let selectedDate = new Date(date);	
@@ -89,7 +104,8 @@ export default class HomePage extends React.Component {
 				<Mealinputform 
 					selectedDate={selectedDate} 
 					currentMealInfo={currentMealInfo}
-					userId={this.props.userId}/>
+					userId={this.props.userId}
+					onAddMealSuccess={this.onMealSuccess}/>
 			</div>
 		);
 	}
