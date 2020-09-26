@@ -12,6 +12,29 @@ export default class HomePage extends React.Component {
 		caloriesOfTheMonth: 0,
 		caloriesOfTheWeeks: 0
 	};
+	componentDidMount() {
+		this.getMealsinfoOnRender();
+		
+	}
+
+	getMealsinfoOnRender = ()=>{
+		const currentMonth = new Date().toISOString();
+		console.log("sdfasdf")
+		axios
+			.get(`http://localhost:8000/api/meals/mealsbymonth/${currentMonth.slice(0, 7)}`)
+			.then((res) => {
+				this.setState({ mealsInfoOfTheMonth: res.data });
+				return res.data;
+			})
+			.then((res) => {
+				let calorieCounterForTheMonth = 0;
+				for (let i = 0; i < res.length; i++) {
+					calorieCounterForTheMonth = Number(res[i].alldaycalories) + Number(calorieCounterForTheMonth);
+				}
+
+				this.setState({ caloriesOfTheMonth: calorieCounterForTheMonth });
+			});
+	}
 
 	getSelectedDate = async (date) => {
 		const selectedDate = await date;
@@ -19,9 +42,11 @@ export default class HomePage extends React.Component {
 		this.setState({
 			date: new Date(selectedDate).toISOString()
 		});
-		const currentMeal = this.state.mealsInfoOfTheMonth.filter((meal) => meal.dateofmeal.slice(0,10)===this.state.date.slice(0,10));
+		const currentMeal = this.state.mealsInfoOfTheMonth.filter(
+			(meal) => meal.dateofmeal.slice(0, 10) === this.state.date.slice(0, 10)
+		);
 
-		this.setState({currentMealInfo:currentMeal});
+		this.setState({ currentMealInfo: currentMeal });
 	};
 
 	getMealInfoByMonth = async (yearAndMonth) => {
@@ -57,8 +82,9 @@ export default class HomePage extends React.Component {
 					myCalories / Week = <p className="calorieTotal">9000</p>
 				</h2>
 				<h2>
-					myCalories / Month = <p className="calorieTotal">{this.state.caloriesOfTheMonth}</p>
+					myCalories / Month = <p className="calorieTotal">{this.state.caloriesOfTheMonth}</p> <span onClick={()=>this.getMealsinfoOnRender()}>Recalculate </span>
 				</h2>
+				
 				<CalorieCalendar
 					getSelectedDate={this.getSelectedDate}
 					getMealInfoByMonth={this.getMealInfoByMonth}
@@ -72,8 +98,7 @@ export default class HomePage extends React.Component {
 				)}
 
 				<Mealinputform
-					selectedDate={this.state.date}
-					mealsInfoOfTheMonth={this.state.mealsInfoOfTheMonth}
+					selectedDate={this.state.date}					
 					currentMealInfo={this.state.currentMealInfo}
 				/>
 			</div>

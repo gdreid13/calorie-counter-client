@@ -25,9 +25,9 @@ export const GeneralApiServices = {
               : res.json()
         )
     },
-    postItem(dbName,item){
-        //const proxy='https://cors-anywhere.herokuapp.com'
-        return fetch(`${config.API_ENDPOINT}/${dbName}`,{
+    postItem(item){
+        console.log(item);
+        return fetch(`${config.API_ENDPOINT}/meals`,{
             method: `POST`,
             headers:{
                 'Authorization': `Basic ${config.API_TOKEN}`,
