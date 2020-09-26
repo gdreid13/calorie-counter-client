@@ -10,30 +10,33 @@ export default class mealInputform extends React.Component {
 			push: () => { },
 			selectedDate: new Date()
 		},
+		currentMealInfo: {}
 	};
-
+	
 	state = {
 		isLogged: true,
 		meal:{
-			id:'',
-			breakfast_food:'',
-			breakfast_calories:0,
-			lunch_food:'',
-			lunch_calories:0,
-			dinner_food:'',
-			dinner_calories:0,	
+			id:'', alldaycalories:0,
+			breakfast_food:'',breakfast_calories:0,
+			lunch_food:'',lunch_calories:0,
+			dinner_food:'',dinner_calories:0,	
 		},
 		displayMessage: false,
 	}
 
 	componentDidMount(){
-		//const {userId,selectedDate} = this.props
-		//get meal by user and date
+		const {currentMealInfo}= this.props
+		if (currentMealInfo.id) {
+			this.setState({meal: currentMealInfo})
+		}
 	}
 
-	onMealsSubmit(e) {
+	
+
+	onMealsSubmit= e=> {
 		e.preventDefault();
 		const { breakfast_food,breakfast_calories,lunch_food,lunch_calories,dinner_food,dinner_calories } = e.target;
+		const total= Number(breakfast_calories.value)+Number(lunch_calories.value)+Number(dinner_calories.value)
 		const mealData={
 			breakfast_food: breakfast_food.value,
 			breakfast_calories: breakfast_calories.value,
@@ -41,26 +44,32 @@ export default class mealInputform extends React.Component {
 			lunch_calories: lunch_calories.value,
 			dinner_food: dinner_food.value,
 			dinner_calories: dinner_calories.value,
+			alldaycalories: total
 		}
-		const {id}= this.state.meal
-		const {userId,selectedDate} = this.props
+		
+		const {userId,selectedDate, currentMealInfo} = this.props
+		const {id}= currentMealInfo
 		const date= moment(selectedDate).format('YYYY-MM-DD')
 		
 		if (id){
+			console.log(mealData)
+			/*
 			GeneralApiServices.patchItemById('meals',id,mealData)
 				.then(meal => {
 					
 
-				}).catch(res => console.log(res.message))
+				}).catch(res => console.log(res.message))*/
 		}
 		else {
-			mealData.userId= userId
+			mealData.userid= userId
 			mealData.dateofmeal= date;
+			console.log(mealData)
+			/*
 			GeneralApiServices.postItem('meals',mealData)
 				.then(meal => {
 					this.props.onAddMealSuccess()
 
-				}).catch(res => console.log(res.message))
+				}).catch(res => console.log(res.message))*/
 		}
 	}
 

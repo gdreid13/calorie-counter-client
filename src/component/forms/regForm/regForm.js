@@ -49,7 +49,7 @@ export default class RegForm extends React.Component {
             age: age.value, gender: gender.value,
             height: height.value,weight: weight.value
         }
-        console.log(data)
+        //console.log(data)
         //this.setState({ error: null })
         
         if (id) {
