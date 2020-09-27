@@ -31,10 +31,26 @@ export default class HomePage extends React.Component {
 		MealApiServices.getMealsByUser(userId)
 			.then(array=>this.setState({allMeals: array}))
 			.then(()=>this.updateCurrentMeal())	
+			.then(()=>this.getDatesThatHaveMeals())
 	}
 
-	highlightDate= ()=>{
-		
+	getDatesThatHaveMeals= ()=>{
+		let array=[]
+		const {allMeals}= this.state
+		const format = (d) => moment(d).format('YYYY-MM-DD')
+		if (allMeals){
+			for (let i=0; i< allMeals.length;i++){
+				let date= allMeals[i].dateofmeal
+				array.push(format(date))
+			}
+		}
+		const dates= document.querySelectorAll('.react-calendar__month-view__days__day abbr')
+		for (let i=0; i<dates.length;i++){
+			const d= new Date(dates[i].getAttribute('aria-label'))
+			if (array.includes(format(d))){
+				dates[i].className='highlight'
+			}
+		}
 	}
 
 	componentDidMount(){
@@ -80,8 +96,6 @@ export default class HomePage extends React.Component {
 			});
 	};
 
-	getMealInfoOfTheDay = ()=>{};
-
 	render() {
 		const {date,mealsInfoOfTheMonth,currentMealInfo}= this.state
 		let selectedDate = new Date(date);	
@@ -97,7 +111,7 @@ export default class HomePage extends React.Component {
 				<CalorieCalendar 
 					getSelectedDate={this.getSelectedDate} 
 					getMealInfoByMonth={this.getMealInfoByMonth}
-					getMealInfoOfTheDay={this.getMealInfoOfTheDay}/>
+					/>
 
 				{(selectedDate.toString() === 'Invalid Date') ? <h2> Select Date </h2> : <h2> {selectedDate.toDateString()} </h2>}
 
