@@ -146,7 +146,6 @@ export default class HomePage extends React.Component {
 	render() {
 		const {date,mealsInfoOfTheMonth,currentMealInfo}= this.state
 		let selectedDate = new Date(date);	
-		let selectedDate = new Date(this.state.date);
 
 		return (
 			<div className="home">
