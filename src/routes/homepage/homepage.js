@@ -1,7 +1,6 @@
 import React from 'react';
 import CalorieCalendar from '../../component/calendar/calendar';
 import './homepage-style.css';
-import axios from 'axios';
 import Mealinputform from '../../component/forms/mealInputform/mealInputform';
 import './homepage-style.css';
 import axios from 'axios'
