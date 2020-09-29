@@ -3,10 +3,9 @@ import Calendar from 'react-calendar';
 import './react-calendar.scss';
 
 export default class CalorieCalendar extends React.Component {
-
 	state = {
 		date: new Date(),
-		currentDate: '',
+		currentDate: ''
 		// hover:new Date(),
 	};
 
