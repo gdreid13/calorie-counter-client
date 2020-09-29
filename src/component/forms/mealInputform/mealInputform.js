@@ -49,7 +49,6 @@ export default class mealInputform extends React.Component {
 	}
 	
 	getMealsAndCalories = (e) => {
-		let userId = this.props.userId;
 		e.preventDefault();
 		const {
 			breakfast_food,
