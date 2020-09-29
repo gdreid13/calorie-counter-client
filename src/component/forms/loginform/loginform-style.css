@@ -32,11 +32,6 @@
 	background-color: gray;
 	cursor: not-allowed;
 }
-#help-me-login p{
-	color: red;
-	text-align: center;
-	padding: 10px;
-}
 .form input{
   padding:5px 10px;
   }

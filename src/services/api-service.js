@@ -76,17 +76,3 @@ export const GeneralApiServices = {
         : res.json())
     },
 }
-export const MealApiServices={
-    getMealsByUser(id){
-        return fetch(`${config.API_ENDPOINT}/meals?userId=${id}`, {
-            headers: {
-                'Authorization': `Basic ${config.API_TOKEN}`,
-            },
-        })
-        .then(res =>
-            (!res.ok)
-              ? res.json().then(e => Promise.reject(e))
-              : res.json()
-        )
-    }
-}
