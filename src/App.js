@@ -72,7 +72,7 @@ export default class App extends Component {
             />
             <Route
               path={'/home'}
-              component={(props) => <HomePage {...props} userId={this.state.userid}/>}
+              component={(props) => <HomePage {...props} />}
             />
             <Route
               path={'/register'}
