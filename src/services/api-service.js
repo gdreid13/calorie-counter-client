@@ -25,9 +25,9 @@ export const GeneralApiServices = {
               : res.json()
         )
     },
-    postItem(item){
-        console.log(item);
-        return fetch(`${config.API_ENDPOINT}/meals`,{
+    postItem(dbName,item){
+        //const proxy='https://cors-anywhere.herokuapp.com'
+        return fetch(`${config.API_ENDPOINT}/${dbName}`,{
             method: `POST`,
             headers:{
                 'Authorization': `Basic ${config.API_TOKEN}`,
@@ -75,4 +75,18 @@ export const GeneralApiServices = {
         ? res.json().then(e=>Promise.reject(e))
         : res.json())
     },
+}
+export const MealApiServices={
+    getMealsByUser(id){
+        return fetch(`${config.API_ENDPOINT}/meals?userId=${id}`, {
+            headers: {
+                'Authorization': `Basic ${config.API_TOKEN}`,
+            },
+        })
+        .then(res =>
+            (!res.ok)
+              ? res.json().then(e => Promise.reject(e))
+              : res.json()
+        )
+    }
 }

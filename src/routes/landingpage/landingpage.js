@@ -3,7 +3,6 @@ import './landingpage-style.css';
 import { Link } from 'react-router-dom';
 
 export default class LandingPage extends React.Component {
-
 	state={
 		isLoggedIn: false
 	}
@@ -23,15 +22,9 @@ export default class LandingPage extends React.Component {
 				</h4>
 				<div className="landing__img">
 					<h4>
-					{
-						this.state.isLoggedIn ? (<Link className="homePageLink" to={'/home'}>
+						<Link className="homePageLink" to={'/home'}>
 							My Dashboard
-						</Link>):
-						(<Link className="homePageLink" to={'/login'}>
-							My Dashboard
-						</Link>)
-					}
-						
+						</Link>
 					</h4>
 				</div>
 			</div>
