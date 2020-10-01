@@ -9,10 +9,12 @@ export default class LoginPage extends React.Component {
         history: {
             push: () => {},
         },
+        loginUpdate:()=>{}
     }
 
     handleLoginSuccess = () => {
-        const { history } = this.props
+        const { history,loginUpdate } = this.props
+        loginUpdate()
         history.push('/home')
     }
 

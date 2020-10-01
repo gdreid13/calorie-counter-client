@@ -104,7 +104,7 @@
 .Header-logged-in a:nth-child(2) {
     color: greenyellow
 }*/
-@media screen and (min-width: 690px) {
+@media screen and (min-width: 815px) {
     .app_nav .menu  {
         display: flex;
         width: 30%;
