@@ -116,7 +116,6 @@ export default class mealInputform extends React.Component {
 				)
 			}
 		}
-	}
 
 	render() {
 		const breakfast = this.renderCalorieForm('What was for breakfast?', 'Breakfast calories?')
