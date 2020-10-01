@@ -104,7 +104,7 @@ export default class mealInputform extends React.Component {
 		this.setState({meal:{...this.state.meal,[name]:value}})
     }
 
-			renderCalorieForm(food, calorie); {
+			renderCalorieForm(food, calorie) {
 				const { meal } = this.state
 				return (
 					<div className='meal_entries'>
