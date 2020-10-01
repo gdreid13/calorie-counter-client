@@ -1,10 +1,11 @@
 .landing {
-  margin-top: 150px;
+	margin-top: 100px;
 }
 .landing__header {
-  font-size: 40px;
-  text-transform: uppercase;
-  padding-bottom: 30px;
+	font-size: 40px;
+	text-transform: uppercase;
+	padding-bottom: 30px;
+	text-shadow: 1px 3px 3px #535353;
 }
 
 .landing__description{
@@ -12,18 +13,51 @@
   padding-bottom: 30px;
 }
 
+
 .landing__link {
-  font-size: 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: rgb(12, 10, 104);
+	font-size: 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #303f9f;
+	margin: 10px;
+	text-shadow: 1px 1px 1px #535353;
 }
 
-.landing__link:hover {
-  color:red;
+.landing__link_text{
+	text-transform: uppercase;
+	padding-top: 10px;
+	text-shadow: 1px 1px 1px #535353;
+}
+
+.homePageLink {
+	text-decoration: none;
+	margin-top: 200px;
+	font-size: 35px;
+	color: white;
+	transition: ease-in-out 0.5s;
+}
+.landing__link {
+	font-size: 20px;
+	transition: ease-in-out 0.5s;
+}
+.homePageLink:hover {
+	font-size: 40px;
+	transition: ease-in-out 0.4s;
 }
 
 .landing__img {
-  width: 95%;
-  height: 500px;
+	border: 2px solid #000000c9;
+	border-radius: 5px;
+	margin: 0px auto;
+	margin-bottom: 50px;
+	padding-top: 225px;
+	width: 80%;
+	height: auto;
+	min-height: 60vh;
+	background-image: linear-gradient(#0505058f, #000000ad), url("../../assets/landing.jpg"); /* W3C */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-shadow: 4px 4px 5px #535353;
+	box-shadow: 5px 9px 4px #535353;
 }

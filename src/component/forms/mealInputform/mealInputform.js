@@ -33,39 +33,47 @@ export default class mealInputform extends React.Component {
 				}
 			};
 
-
-			console.log(MealsAndCalories);
-		};
-
-		render() {
-			return (
-				<section className="meal_entry">
-					<form class="user__carb-form" onSubmit={this.getMealsAndCalories}>
-						<div>
-							<label for="breakfast_food">Breakfast</label>
-							<input placeholder="Meal" type="text" name="breakfast_food" id="breakfast_food" />
-							<label for="breakfast_calorie">Calories</label>
-							<input placeholder="Calories" type="text" name="breakfast_calorie" id="breakfast_calorie" />
-						
-						</div>
-						<div>
-							<label for="lunch_food">Lunch</label>
-							<input placeholder="Meal" type="text" name="lunch_food" id="lunch_food" />
-							<label for="lunch_calorie">Calories</label>
-							<input placeholder="Calories" type="text" name="lunch_calorie" id="lunch_calorie" />
-							<button type="submit">Log</button>
-						</div>
-						<div>
-							<label for="dinner_food">Dinner</label>
-							<input placeholder="Meal" type="text" name="dinner_food" id="dinner_food" />
-							<label for="dinner_calorie">Calories</label>
-							<input placeholder="Calories" type="text" name="dinner_calorie" id="dinner_calorie" />
-							<button type="submit">Log</button>
-						</div>
-					</form>
-				</section>
-			);
+			renderCalorieForm(food, calorie); {
+				const { meal } = this.state
+				return (
+					<div className='meal_entries'>
+						<input className="meal__box" type='text' placeholder={food} name={food}
+							value={meal[`${food}`]} onChange={this.onChange} /><br></br>
+						<input className="meal__box" type='number' placeholder={calorie} name={calorie}
+							value={meal[`${calorie}`]} onChange={this.onChange} />
+					</div>
+				)
+			}
 		}
 	}
-}
 
+	render() {
+		const breakfast = this.renderCalorieForm('What was for breakfast?', 'Breakfast calories?')
+		const lunch = this.renderCalorieForm('What was for lunch?', 'Lunch calories?')
+		const dinner = this.renderCalorieForm('What was for dinner?', 'Dinner calories?')
+		const { error } = this.state
+
+		return (
+			<form className="user__carb-form" onSubmit={this.getMealsAndCalories}>
+				<p className="meal__header">
+					B R E A K F A S T
+				{breakfast}
+				</p>
+
+				<p className="meal__header">
+					L U N C H
+				{lunch}</p>
+
+				<p className="meal__header">
+					D I N N E R
+				{dinner}</p>
+
+				<div className="meal_control">
+					<button className="meal__button" type="button" onClick={this.props.onAddMealSuccess}>RESET</button>
+					<button className="meal__button" type="submit">SUBMIT</button>
+				</div>
+				{error && <div className='user__carb-form-error'>{error}</div>}
+			</form>
+		)
+	}
+}

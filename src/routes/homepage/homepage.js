@@ -19,14 +19,10 @@ export default class HomePage extends React.Component {
 		let selectedDate = new Date(this.state.date);		
 		return (
 			<div className="home">
-				<h1>My Dashboard</h1>
-				<h2>
-					myCalories / Week = <p className="calorieTotal">9000</p>
-					
-				</h2>
-				<h2>
-					myCalories / Month = <p className="calorieTotal">90000</p>
-					
+				<h1 className="dash">D A S H B O A R D</h1>
+				<h2 className="my_calories">
+					MONTHLY CALORIES <br></br>  
+					<p className="calorieTotal"></p>	
 				</h2>
 				<CalorieCalendar getSelectedDate={this.getSelectedDate} />
 
