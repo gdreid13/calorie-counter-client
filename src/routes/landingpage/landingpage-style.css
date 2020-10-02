@@ -1,11 +1,10 @@
 .landing {
-	margin-top: 100px;
+	margin-top: 150px;
 }
 .landing__header {
 	font-size: 40px;
 	text-transform: uppercase;
 	padding-bottom: 30px;
-	text-shadow: 1px 3px 3px #535353;
 }
 
 .landing__description {
@@ -13,22 +12,13 @@
 	padding-bottom: 30px;
 }
 
-
 .landing__link {
 	font-size: 20px;
 	text-decoration: none;
 	text-transform: uppercase;
 	color: #303f9f;
 	margin: 10px;
-	text-shadow: 1px 1px 1px #535353;
 }
-
-.landing__link_text{
-	text-transform: uppercase;
-	padding-top: 10px;
-	text-shadow: 1px 1px 1px #535353;
-}
-
 .homePageLink {
 	text-decoration: none;
 	margin-top: 200px;
@@ -46,18 +36,14 @@
 }
 
 .landing__img {
-	border: 2px solid #000000c9;
-	border-radius: 5px;
 	margin: 0px auto;
 	margin-bottom: 50px;
-	padding-top: 225px;
-	width: 80%;
+	padding-top: 300px;
+	width: 95%;
 	height: auto;
-	min-height: 60vh;
+	min-height: 80vh;
 	background-image: linear-gradient(#0505058f, #000000ad), url("../../assets/landing.jpg"); /* W3C */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	text-shadow: 4px 4px 5px #535353;
-	box-shadow: 5px 9px 4px #535353;
 }

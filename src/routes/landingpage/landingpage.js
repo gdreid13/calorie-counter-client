@@ -18,7 +18,7 @@ export default class LandingPage extends React.Component {
 					<Link className="landing__link " to={'/register'}>
 						Sign Up
 					</Link>
-					<p className="landing__link_text">to keep track of your weekly and monthly calorie intake</p>
+					to keep track of your weekly and monthly calorie intake
 				</h4>
 				<div className="landing__img">
 					<h4>

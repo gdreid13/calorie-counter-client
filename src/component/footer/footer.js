@@ -12,7 +12,7 @@ export default class Footer extends Component{
                     <FontAwesomeIcon className='icon' icon='copyright'/>
                     <span>{' '}Thinkful 2020</span>
                 </div>
-                <Link className="footer__email" to='myCalories2020@gmail.com'aria-label='email'><FontAwesomeIcon className='icon' icon='envelope'/>
+                <Link to='myCalories2020@gmail.com'aria-label='email'><FontAwesomeIcon className='icon' icon='envelope'/>
                             {' '}{' '}EMAIL US
                 </Link>
                 
