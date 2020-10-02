@@ -96,25 +96,27 @@ export default class RegForm extends React.Component {
         const submitButton= (user.user_name)? 'Save' : 'Register'
         
         return (
-            <form className='form register-form' onSubmit={this.handleSubmit}>
+            <div>
+            <h3> sign up here </h3>
+                <form className='form register-form' onSubmit={this.handleSubmit}>            
                 <div className='form_input'>
-                    <label htmlFor="name">Name</label>
-                    <input placeholder='Full Name' type="text" name='name' id='name' onChange={this.onChange}/>
+                    <label htmlFor="name"></label>
+                    <input placeholder='First Name' type="text" name='name' id='name' onChange={this.onChange}/>
                 </div>
                 {name.touch && <ValidationError message={nameError}/>}
                 <div className='form_input'>
-                    <label htmlFor="username">Email/Username</label>
-                    <input type="text" name='user_name' id='user_name' onChange={this.onChange} />
+                    <label htmlFor="username"></label>
+                    <input type="text"placeholder='Username' name='user_name' id='user_name' onChange={this.onChange} />
                 </div>
                 {user_name.touch && <ValidationError message={usernameError} />}
                 <div className='form_input'>
-                    <label htmlFor="password">Password</label>
-                    <input type="password" name='password' id='password' onChange={this.onChange} autoComplete="off"/>
+                    <label htmlFor="password"></label>
+                    <input type="password"placeholder='Password' name='password' id='password' onChange={this.onChange} autoComplete="off"/>
                 </div>
                 {password.touch && <ValidationError message={passwordError}/>}
                 <BiometricComponent />
                 <div className='form_input'>
-                    <label htmlFor="gender">Gender</label>
+                    <label htmlFor="gender"></label>
                     <select id="gender" name="gender">
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -128,6 +130,8 @@ export default class RegForm extends React.Component {
                     </button>
                 </div>
             </form>
+            </div>
+            
         )
     }
 }

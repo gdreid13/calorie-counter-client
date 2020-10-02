@@ -55,7 +55,7 @@ export  function ValidationError(props) {
 export function BiometricComponent(){
     return (
         <div className='form_input'>
-            <header>Biometric:</header>
+            <header></header>
             <div className='biometric'>
                 <input placeholder='Age' type="number" name='age' id='age' min='5'max='125'/>
                 <input placeholder='Height (in)' type="number" name='height' id='height'min='40'max='105'/>

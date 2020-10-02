@@ -18,10 +18,7 @@ export default class RegPage extends React.Component {
 
     render() {
         return (
-            <section>
-                <header role="banner" className="reg_page">
-                    <h3>Sign up keep track of your calorie intake and stay fit!</h3>
-                </header>
+            <section className="reg_page" >             
                 <RegForm
                     onRegistrationSuccess={this.handleRegistrationSuccess}
                     handleCancel= {this.handleCancel}
