@@ -10,7 +10,7 @@
 }
 
 .footer{
-  color: black !important;
+  color: black;
   height: 75px;
   margin-top: -75px;
   overflow: hidden;

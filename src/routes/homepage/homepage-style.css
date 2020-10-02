@@ -3,7 +3,17 @@
   margin-top: 100px;
 }
 
+.dash {
+  font-size: 50px;
+  text-shadow: 1px 3px 3px #535353;
+}
+
+.my_calories {
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 1px #535353;
+}
+
 .calorieTotal {
   display: inline-flex;
-  color: rgb(0, 197, 0)
+  color: rgb(1, 134, 1)
 }

@@ -12,14 +12,31 @@
 .app_nav {
     position: fixed; top:0; left:0; right:0; z-index: 10;
     height: 77px;
-    border-bottom: solid; border-width: thin; border-color: rgb(109, 106, 106);
+    border-bottom: solid; 
+    border-width: thin; 
+    border-color: rgb(109, 106, 106);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 25px;
-    background-color:#283593 ; 
-    color: white;
+    background-color: #00bcddfd;
+    color: rgb(32, 32, 32);
     overflow: hidden;
+    box-shadow: 1px 3px 3px #535353;
+}
+
+.nav__menu {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 3px 3px; 
+}
+
+.nav__menu_path {
+    border: #2b2a2a;
+    border-radius: 5px;
+    background-color: #ececec;
+    box-shadow: 1px 3px 3px #535353;
 }
 .app_nav h1 {
     text-align: left;
@@ -28,7 +45,10 @@
     text-decoration: none;
 }
 .app_nav a:hover {
-    color: yellow;
+    color:  rgb(97, 97, 97);
+    transform: scale(1.03);
+    transition: ease-in-out 0.2s;
+    font-size: 25px;
 }
 
 .app_nav h1{
@@ -39,16 +59,23 @@
     text-align: right;
 }
 .dropdown .icon {
-    font-size: 23px; cursor: pointer;
+    font-size: 23px; 
+    cursor: pointer;
 }
 .dropdown div {
-    position: fixed; top: 60px; right:0; 
-    background-color: rgba(4,10,46,0.801);
-    display: flex;flex-direction: column;
+    position: fixed; 
+    top: 60px; 
+    right:0; 
+    background-color: rgba(105, 105, 105, 0.801);
+    display: flex;
+    flex-direction: column;
     text-align: left;
 }
 .dropdown div a {
-    padding: 10px;  font-weight: 600;
+    padding: 10px;  
+    font-weight: 600;
+    font-size: larger;
+    text-transform: uppercase;
 }
 .dropdown div a:hover {
     background-color: orange;
@@ -56,11 +83,14 @@
 }
 
 .app_nav a {
-    color: white;   
+    color: rgb(22, 22, 22);
+    padding: 5px 5px;
+    
 }
 .app_nav .menu {
     display: none;
 }
+
 /*
 .Header-not-logged-in, .Header-logged-in {
     width: 30%;
