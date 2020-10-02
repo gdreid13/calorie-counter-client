@@ -116,30 +116,20 @@ export default class mealInputform extends React.Component {
 		)
 	}
 
-	render() {
-		const breakfast = this.renderCalorieForm('What was for breakfast?', 'Breakfast calories?')
-		const lunch = this.renderCalorieForm('What was for lunch?', 'Lunch calories?')
-		const dinner = this.renderCalorieForm('What was for dinner?', 'Dinner calories?')
-		const { error } = this.state
+	render(){
+		const breakfast= this.renderCalorieForm('breakfast_food','breakfast_calories')
+		const lunch= this.renderCalorieForm('lunch_food','lunch_calories')
+		const dinner= this.renderCalorieForm('dinner_food','dinner_calories')
+		const {error}= this.state
 
-		return (
+		return(
 			<form className="user__carb-form" onSubmit={this.getMealsAndCalories}>
-				<p className="meal__header">
-					B R E A K F A S T
 				{breakfast}
-				</p>
-
-				<p className="meal__header">
-					L U N C H
-				{lunch}</p>
-
-				<p className="meal__header">
-					D I N N E R
-				{dinner}</p>
-
-				<div className="meal_control">
-					<button className="meal__button" type="button" onClick={this.props.onAddMealSuccess}>RESET</button>
-					<button className="meal__button" type="submit">SUBMIT</button>
+				{lunch}
+				{dinner}
+				<div className="form_control">
+					<button type="button" onClick={this.props.onAddMealSuccess}>Reset</button>
+					<button type="submit">Submit</button>
 				</div>
 				{error && <div className='user__carb-form-error'>{error}</div>}
 			</form>
@@ -177,3 +167,4 @@ export default class mealInputform extends React.Component {
 		);
 	}*/
 }
+

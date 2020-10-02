@@ -133,10 +133,9 @@ export default class HomePage extends React.Component {
 		let selectedDate = new Date(date);	
 		return (
 			<div className="home">
-				<h1 className="dash">D A S H B O A R D</h1>
-				<h2 className="my_calories">
-					MONTHLY CALORIES <br></br>  
-					<p className="calorieTotal"></p>	
+				<h1>My Dashboard</h1>
+				<h2>
+					myCalories / Month = <p className="calorieTotal">{caloriesOfTheMonth}</p>	
 				</h2>
 				<CalorieCalendar 
 					getSelectedDate={this.getSelectedDate} 

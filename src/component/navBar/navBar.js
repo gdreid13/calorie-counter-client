@@ -29,10 +29,10 @@ export default class NavBar extends Component{
     }
     renderLoginLink(){
         return(
-            <div className='nav__menu' onClick={this.closeDropdown}>
-                <Link className="nav__menu_path" to='/login' aria-label='login-page'>Login </Link>
-                <Link className="nav__menu_path" to='/register' aria-label='registration-page' > Sign Up</Link>
-                <Link className="nav__menu_path" to='/fitnesstips' aria-label='fitness-tips'>Fitness Tips</Link>
+            <div className='Header-not-logged-in' onClick={this.closeDropdown}>
+                <Link to='/login' aria-label='login-page'>Login </Link>
+                <Link to='/register' aria-label='registration-page' > Sign Up</Link>
+                <Link to='/fitnesstips' aria-label='fitness-tips'>Fitness Tips</Link>
                 {this.props.token.isAdmin && <Link to='/admin'aria-label='admin-page'> Admin</Link> }
             </div>
         )
