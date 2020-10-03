@@ -2,7 +2,6 @@ import React from 'react'
 import { GeneralApiServices } from '../../../services/api-service'
 import moment from 'moment';
 import './mealInputform-style.css'
-// import LogButton from '../Button'
 
 export default class mealInputform extends React.Component {
 	static defaultProps = {
@@ -70,7 +69,6 @@ export default class mealInputform extends React.Component {
 			dinner_calories: dinner_calories.value,
 		}
 
-		//console.log(MealsAndCalories)
 		const {userId,selectedDate,currentMealInfo,onAddMealSuccess} = this.props
 		const {id}= currentMealInfo
 		const date= moment(selectedDate).format('YYYY-MM-DD')
@@ -100,7 +98,6 @@ export default class mealInputform extends React.Component {
 	
 	onChange= e=>{
 		const {name,value}= e.target
-		//this.setState({[key]:newValue})
 		this.setState({meal:{...this.state.meal,[name]:value}})
     }
 

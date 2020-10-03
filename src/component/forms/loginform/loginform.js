@@ -93,7 +93,6 @@ export default class LoginForm extends React.Component {
 	}
 	renderForgotPasswordForm() {
 		const { passwordMessage } = this.state;
-		//const boolean= (passwordMessage)? true: false
 		const message = passwordMessage ? <div className="message">{passwordMessage}</div> : '';
 		return (
 			<form className="form" onSubmit={this.handleForgotPasswordSubmitted} >
