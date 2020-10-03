@@ -1,0 +1,21 @@
+.biometric_form{
+  margin-bottom: 10px;
+  
+}
+
+.biometric_input {
+  margin-bottom: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  height: 35px;
+  width: 40%;
+  font-size: larger;
+  border: 2px solid #00bcddfd;
+  box-shadow: 1px 3px 3px #535353;
+  outline: none;
+}
+
+.biometric_input:focus{
+  box-shadow: none;
+  border: 2px solid #006b7e ;
+}

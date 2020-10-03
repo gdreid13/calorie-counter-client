@@ -3,13 +3,11 @@ import { Route, Switch } from 'react-router-dom'
 import TokenService from '../src/services/TokenService'
 import {GeneralApiServices} from '../src/services/api-service'
 import './app-style.css';
-//ROUTES:
 import HomePage from './routes/homepage/homepage';
 import LandingPage from './routes/landingpage/landingpage';
 import RegistrationPage from './routes/regPage/regPage';
 import FitnessTipsPage from './component/fitness/fitness';
 import LoginPage from './routes/loginpage/loginpage';
-//COMPONENTS:
 import NotFoundPage from './component/notfoundpage/notfoundpage';
 import NavBar from './component/navBar/navBar';
 import Footer from './component/footer/footer';

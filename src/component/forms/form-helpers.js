@@ -1,5 +1,6 @@
 /* eslint-disable */
-import React from 'react'
+import React from 'react';
+import './form-helpers.css'
 
 export function validateName(name='') {
     const validLetters= /^[A-Za-z]+$/
@@ -54,13 +55,13 @@ export  function ValidationError(props) {
 
 export function BiometricComponent(){
     return (
-        <div className='form_input'>
-            <header>Biometric:</header>
-            <div className='biometric'>
-                <input placeholder='Age' type="number" name='age' id='age' min='5'max='125'/>
-                <input placeholder='Height (in)' type="number" name='height' id='height'min='40'max='105'/>
-                <input placeholder='Weight (lb)' type="number" name='weight' id='weight' min='30'max='900'/>
-            </div>
+        <div className='biometric_form'>
+                <label htmlFor="age">*empty*</label>
+                <input className="biometric_input" placeholder='Age' type="number" name='age' id='age' min='5'max='125'/><br></br>
+                <label htmlFor="height">*empty*</label>
+                <input className="biometric_input" placeholder='Height (in)' type="number" name='height' id='height'min='40'max='105'/><br></br>
+                <label htmlFor="weight">*empty*</label>
+                <input className="biometric_input" placeholder='Weight (lb)' type="number" name='weight' id='weight' min='30'max='900'/><br></br>
         </div>
     )
 }
