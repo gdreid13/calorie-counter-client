@@ -157,6 +157,13 @@ export default class LoginForm extends React.Component {
 						<label className="showpass" htmlFor="togglePassword"> Show Password</label>
 					</div>
 
+					<div className="test_info">
+						<p>DEMO LOGIN</p>
+						<p>Username | test</p>
+						<p>Password | P@ssWord!123</p>
+					</div>
+
+
 					<div className="login__help">
 						<span className="forgot__user" onClick={this.handleForgotUsernameClicked}>Forgot Username</span>
 						{' | '}
