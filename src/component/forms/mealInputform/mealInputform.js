@@ -113,6 +113,7 @@ export default class mealInputform extends React.Component {
 		return (
 			<div className="meal_entries">
 				<input type="text"  placeholder={placeholder} name={food} value={meal[`${food}`]} onChange={this.onChange} />
+
 				<input
 					type="number"
 					placeholder={calorie}
@@ -145,11 +146,10 @@ export default class mealInputform extends React.Component {
 						D I N N E R
 					{dinner}
 					</p>
-					<div className="meal_control">
+				
 						<button className="meal__button" type="submit">
 							SUBMIT
 					</button>
-					</div>
 					{error && <div className="user__carb-form-error">{error}</div>}
 				</form>
 			</div>
