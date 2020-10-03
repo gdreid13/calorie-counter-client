@@ -16,6 +16,8 @@
   transition: ease-in-out 0.4s;
   border-radius: 4px;
   box-shadow: 5px 9px 4px #535353;
+  width: 80%;
+	height: auto;
 }
 .fitness__image:hover {
   transform: scale(1.02);
