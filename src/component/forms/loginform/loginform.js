@@ -1,7 +1,7 @@
 import React from 'react';
 import TokenService from '../../../services/TokenService';
 import AuthHelperService from '../../../services/AuthHelperService';
-import {GeneralApiServices} from '../../../services/api-service'
+import { GeneralApiServices } from '../../../services/api-service'
 import { Link } from 'react-router-dom';
 import './loginform-style.css';
 
@@ -18,13 +18,13 @@ export default class LoginForm extends React.Component {
 		displayForm: 1,
 		usernamMessage: '',
 		passwordMessage: ''
-    };
-    
-    componentDidMount(){
-        GeneralApiServices.getAllItems('users').then(json=>{
-            this.setState({userList:json})
-        })
-    }
+	};
+
+	componentDidMount() {
+		GeneralApiServices.getAllItems('users').then(json => {
+			this.setState({ userList: json })
+		})
+	}
 
 	handleSubmitJwtAuth = (ev) => {
 		ev.preventDefault();
@@ -73,22 +73,26 @@ export default class LoginForm extends React.Component {
 	renderForgotUserNameForm() {
 		const message = this.state.usernameMessage ? <div className="message">{this.state.usernameMessage}</div> : '';
 		return (
-			<form className="form" onSubmit={this.handleForgotUsernameSubmitted}>
-				<h3>Let's help find your username</h3>
-				<div>
-					<header>Full name:</header>
-					<input type="text" name="full_name" />
-					<header>Age:</header>
-					<input type="number" name="age" />
-				</div>
-				{message}
-				<div className="form_control">
-					<button type="button" onClick={this.handleLoginReady}>
-						Go back
-					</button>
-					<button type="submit">Find me</button>
-				</div>
-			</form>
+			<main className="forgotUser_holder">
+				<h3>Let's get you back on track!</h3>
+				<form className="form" onSubmit={this.handleForgotUsernameSubmitted}>
+					<div>
+						<label htmlFor="name">*empty*</label>
+						<input className='name_input' placeholder="First Name" type="text" name="full_name" id="name" />
+					</div>
+					<div>
+						<label htmlFor="age">*empty*</label>
+						<input className='name_input' placeholder="Age" type="number" name="age" id="age" />
+					</div>
+					{message}
+					<div className="form_control">
+						<button className="login__button" type="button" onClick={this.handleLoginReady}>
+							Back
+					</button><br></br>
+						<button className="login__button" type="submit">Submit</button>
+					</div>
+				</form>
+			</main>
 		);
 	}
 	renderForgotPasswordForm() {
@@ -96,55 +100,75 @@ export default class LoginForm extends React.Component {
 		//const boolean= (passwordMessage)? true: false
 		const message = passwordMessage ? <div className="message">{passwordMessage}</div> : '';
 		return (
-			<form className="form" onSubmit={this.handleForgotPasswordSubmitted} >
-				<h3>Reset your password</h3>
-				<div>
-					<header>Enter your username/email:</header>
-					<input type="text" name="username" />
-				</div>
-				{message}
-				<div className="form_control">
-					<button type="button" onClick={this.handleLoginReady}>
-						Go back
+			<main className="forgotPass_holder">
+				<h3>Let's get you back on track!</h3>
+				<form className="form" onSubmit={this.handleForgotPasswordSubmitted} >
+					<div>
+						<label htmlFor="user_name">*empty*</label>
+						<input className='username_input' type="text" placeholder="Username" name="user_name" id="user_name" />
+					</div>
+
+					{message}
+					<div className="forgot_pass_buttons">
+						<button className="login__button" type="button" onClick={this.handleLoginReady}>
+							Back
 					</button>
-					<button type="submit" disabled={passwordMessage}>
-						Reset password
+					</div>
+
+					<div>
+						<button className="login__button" type="submit" disabled={passwordMessage}>
+							Reset Password
 					</button>
-				</div>
-			</form>
+					</div>
+
+				</form>
+			</main>
 		);
 	}
 
 	renderLoginForm() {
 		return (
-			<form className="form Login-form" onSubmit={this.handleSubmitJwtAuth}>
-				<input required type="text" name="user_name" id="user_name" placeholder="User name" />
+			<main className="login_holder">
 
-				<input required type="password" name="password" id="password" placeholder="password" autoComplete="off"/>
+				<h3>Sign in continue tracking!</h3>
 
-				<div className="displayPassword">
-					<input
-						type="checkbox"
-						id="togglePassword"
-						onClick={() => {
-							const password = document.getElementById('password');
-							if (password.type === 'password') password.type = 'text';
-							else password.type = 'password';
-						}}
-					/>
-					<label htmlFor="togglePassword">show password</label>
-				</div>
-				<div className="form_help">
-					<span onClick={this.handleForgotUsernameClicked}>Forgot username</span>
-					{' | '}
-					<span onClick={this.handleForgotPasswordClicked}>Forgot password</span>
-					{' | '}
-					<Link to={'/register'}>Register</Link>
-				</div>
-				<div className="form_control">
-					<button type="submit">Login</button>
-				</div>
-			</form>
+				<form className="Login-form" onSubmit={this.handleSubmitJwtAuth}>
+
+					<div>
+						<label htmlFor="user_name">*empty*</label>
+						<input className='username_input' required type="text" name="user_name" id="user_name" placeholder="Username" />
+					</div>
+
+					<div>
+						<label htmlFor="password">*empty*</label>
+						<input className='password_input' required type="password" name="password" id="password" placeholder="Password" autoComplete="off" />
+					</div>
+
+					<div className="displayPassword">
+						<input
+							type="checkbox"
+							id="togglePassword"
+							onClick={() => {
+								const password = document.getElementById('password');
+								if (password.type === 'password') password.type = 'text';
+								else password.type = 'password';
+							}}
+						/>
+						<label className="showpass" htmlFor="togglePassword"> Show Password</label>
+					</div>
+
+					<div className="login__help">
+						<span className="forgot__user" onClick={this.handleForgotUsernameClicked}>Forgot Username</span>
+						{' | '}
+						<span className="forgot__pass" onClick={this.handleForgotPasswordClicked}>Forgot Password</span>
+						{' | '}
+						<Link className="login__reg" to={'/register'}>Register</Link>
+					</div>
+
+					<button className="login__button" type="submit">Login</button>
+
+				</form>
+			</main>
 		);
 	}
 	// 

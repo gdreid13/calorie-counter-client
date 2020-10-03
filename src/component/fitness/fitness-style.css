@@ -24,6 +24,10 @@
 .imgContainer {
   padding: 20px;
 }
+h1, h2{
+  text-shadow: 1px 1px 1px #535353;
+}
+
 h2 {
   padding-top: 20px;
   padding-bottom: 20px;

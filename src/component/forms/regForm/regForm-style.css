@@ -1,49 +1,76 @@
-.form{
-    margin: 100px auto;
-    width: 75%;
-    max-width: 700px;
-}
-.form_input{
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.form_input label, .form_input header {
-    width: 30%;
-    text-align: left;
-}
-.form_input input {
-    width: 60%;
-}
-.biometric {
-    display: flex;
-    justify-content: space-between;
-    width: 60%;
-}
-.biometric input {
-    width: 30%;
+.reg__holder {
+    margin-top: 160px;
+    width: 0 auto ;
 }
 
-.form_control {
-    display: flex; justify-content: space-evenly; text-align: center;
+.reg__holder h3{
+    padding-bottom: 20px;
+    font-size: 40px;
+    text-shadow: 1px 1px 1px #535353;
 }
-.form_control button{
-    margin-top: 20px; width: 100px;padding: 10px;
-    border: none; color: white ; background-color: black;
+
+.register-form{
+    margin-top: 20px;
 }
-.form_control button:hover {
-    cursor: pointer; color: yellow;
+.name_input, .username_input, .password_input{
+    margin-bottom: 20px;
+    border: 2px solid #00bcddfd;
+    border-radius: 5px;
+    box-shadow: 1px 3px 3px #535353;
+    height: 35px;
+    width: 40%;
+    font-size: larger;
+    outline: none;
 }
-.form_control button:disabled {
-    cursor: not-allowed; background-color: gray;
+
+.name_input:focus, .username_input:focus, .password_input:focus{
+    box-shadow: none;
+    border: 2px solid #006b7e ;
 }
-.error {
-    color: red;
-    display: flex;
-    flex-direction: row-reverse;
+
+.gender_input{
+    margin-bottom: 30px;
+    border-radius: 5px;
+    height: 35px;
+    font-size: large;
+    border: 2px solid #00bcddfd;
+    box-shadow: 1px 3px 3px #535353;
+    outline: none;
 }
-.error span {
-    width: 70%;
-    text-align: center;
-    margin-bottom: 10px
+
+.gender_input:focus{
+    box-shadow: none;
+    border: 2px solid #006b7e ;
 }
+
+
+.reg_button[disabled]{
+    background-color: rgb(167, 167, 167);
+    color:black;
+}
+.reg_button[disabled]:hover{
+    background-color: rgb(167, 167, 167);
+    color:black;
+    transform: none;
+    cursor:not-allowed;
+}
+
+.reg_button{
+    height: 35px;
+    width: 100px;
+    box-shadow: 1px 3px 3px #535353;
+    margin-bottom: 15px;
+    background-color:#00bcddfd ;
+    border-radius: 5px;
+    color:black;
+}
+
+.reg_button:hover{
+    background-color:#006b7e;
+    color: white;
+    transition: ease-in-out 0.2s;
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
+
