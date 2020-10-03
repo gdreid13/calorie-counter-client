@@ -1,59 +1,99 @@
-.Login-form input,
-.displayPassword,
-.form_help {
-	width: 75%;
-	margin: auto;
-	margin-bottom: 10px;
-}
-.message {
-	color: red;
-	margin: 10px;
+label{
+	display: none;
 }
 
-.displayPassword {
-	color: gray;
-	font-size: 15px;
-	display: flex;
+.login_holder{
+	margin-top: 200px
 }
-.displayPassword input {
-	width: 15px;
-	margin-right: 10px;
-}
-/*LOGIN*/
 
-#help-me-login button {
-	padding: 8px;
-	margin-top: 10px;
-	background-color: red;
+.login_holder h3{
+	padding-bottom: 20px;
+  font-size: 40px;
+	text-shadow: 1px 1px 1px #535353;
+}
+
+.login__button, .goback__button, .reset_pass__button{
+	height: 35px;
+	width: 100px;
+	box-shadow: 1px 3px 3px #535353;
+	margin-bottom: 15px;
+	background-color:#00bcddfd ;
+	border-radius: 5px;
+	color:black;
+}
+
+.login__button:hover{
+	background-color:#006b7e;
 	color: white;
-	border-style: none;
-}
-#help-me-login button:disabled {
-	background-color: gray;
-	cursor: not-allowed;
-}
-#help-me-login p{
-	color: red;
-	text-align: center;
-	padding: 10px;
-}
-.form input{
-  padding:5px 10px;
-  }
-.LoginForm .form_help {
-	display: flex;
-	align-items: center;
-	color: blue;
-	font-size: 15px;
-}
-.form_help span {
-	margin: 5px;
-}
-.form_help span:hover {
+	transition: ease-in-out 0.2s;
+	transform: scale(1.08);
 	cursor: pointer;
-	color: orange;
+}
+
+.displayPassword{
+	padding-bottom: 20px;
+	margin-top: 20px;
+}
+.showpass{
+	display: inline;
+}
+
+.login__help{
+	margin-bottom: 30px;
+	margin-top: 10px;
+	font-size: 20px;
+}
+
+.login__help:hover{
+	cursor: pointer;
+}
+
+.forgot__pass:hover, .forgot__user:hover{
+	color: #00bcddfd;
+	text-shadow: 0.5px 0.5px #535353;;
+}
+
+.login__reg{
+	text-decoration: none;
+	color: black;
+}
+
+.login__reg:hover{
+	color: #00bcddfd;
+	text-shadow: 0.5px 0.5px #535353;;
+}
+
+.forgotPass_holder{
+	margin-top: 250px
+}
+
+.forgotPass_holder h3{
+	padding-bottom: 20px;
+  font-size: 40px;
+	text-shadow: 1px 1px 1px #535353;
+	margin-bottom: px;
+}
+
+.forgot_pass_buttons{
+	justify-content: space-evenly;
+}
+
+.forgotUser_holder{
+	margin-top: 250px;
+}
+
+.forgotUser_holder h3{
+	padding-bottom: 20px;
+  font-size: 40px;
+	text-shadow: 1px 1px 1px #535353;
+	margin-bottom: px;
 }
 
 .error {
 	color: red;
+}
+
+.message {
+	color: red;
+	margin: 10px;
 }

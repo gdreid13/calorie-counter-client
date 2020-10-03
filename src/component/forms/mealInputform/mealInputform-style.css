@@ -36,9 +36,9 @@
     cursor: pointer;
     
 }
-.refresh:hover{
+/* .refresh:hover{
     transform: scale(1.04);
-}
+} */
 .refresh i{
     font-size: 30px;
 }
@@ -51,7 +51,6 @@
     transition: ease-in-out 0.5s;
 }
  .meal__button:hover{
-     margin: auto;
     font-size: large;
     background-color: green;
     cursor: pointer;

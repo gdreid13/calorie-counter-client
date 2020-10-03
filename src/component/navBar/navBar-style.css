@@ -38,6 +38,7 @@
 	border-radius: 5px;
 	background-color: #ececec;
 	box-shadow: 1px 3px 3px #535353;
+	margin-bottom: 8px;
 }
 .app_nav h1 {
     text-align: left;
@@ -68,20 +69,19 @@
 	position: fixed;
 	top: 60px;
 	right: 0;
-	background-color: rgba(105, 105, 105, 0.801);
+	background-color: #00bcddc5;
 	display: flex;
 	flex-direction: column;
 	text-align: left;
 }
 .dropdown div a {
-	padding: 10px;
+	margin:auto 20px 20px 20px;
 	font-weight: 600;
-	font-size: larger;
-	text-transform: uppercase;
 }
 .dropdown div a:hover {
-	background-color: orange;
-	color: black;
+	transform: none;
+	transition: none;
+	font-size: 17px;
 }
 .app_nav a {
 	color: rgb(22, 22, 22);
@@ -91,7 +91,7 @@
 	display: none;
 }
 
-@media screen and (min-width: 815px) {
+@media screen and (min-width: 900px) {
 	.app_nav .menu {
 		display: flex;
 		width: 30%;

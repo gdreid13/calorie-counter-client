@@ -7,28 +7,24 @@ export default class LoginPage extends React.Component {
     static defaultProps = {
         location: {},
         history: {
-            push: () => {},
+            push: () => { },
         },
-        loginUpdate:()=>{}
+        loginUpdate: () => { }
     }
 
     handleLoginSuccess = () => {
-        const { history,loginUpdate } = this.props
+        const { history, loginUpdate } = this.props
         loginUpdate()
         history.push('/home')
     }
 
     render() {
         return (
-        <section className="login_page">
-            <header role="banner">
-                <h1>Carb Counter</h1>
-                <h3>Sign in to keep track of your calorie intake</h3>
-            </header>
-            <LoginForm 
-                onLoginSuccess={this.handleLoginSuccess}
-            />
-        </section>
+            <section className="login_page">
+                <LoginForm
+                    onLoginSuccess={this.handleLoginSuccess}
+                />
+            </section>
         )
     }
 }
