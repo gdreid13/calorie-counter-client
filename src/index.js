@@ -41,12 +41,12 @@ library.add(
   faThumbsUp,
   faFilm,
   faUserLock,
-  faGift, // logo
-  faListUl, // style: listicle
-  faListOl, // style: howto
-  faGlobeAmericas, // style: news
-  faPenAlt, // style: interview
-  faBookOpen, // style: story
+  faGift,  
+  faListUl, 
+  faListOl, 
+  faGlobeAmericas, 
+  faPenAlt,
+  faBookOpen, 
   faComment,
   faQuoteLeft,
   faArrowRight,
