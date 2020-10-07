@@ -1,92 +1,91 @@
-import config from '../config'
+import config from '../config';
 
 export const GeneralApiServices = {
-    getAllItems(dbName){
+    getAllItems(dbName) {
         return fetch(`${config.API_ENDPOINT}/${dbName}`, {
             headers: {
                 'Authorization': `Basic ${config.API_TOKEN}`,
             },
         })
-        .then(res =>
-            (!res.ok)
-              ? res.json().then(e => Promise.reject(e))
-              : res.json()
-        )
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            );
     },
-    sortItems(dbName,sortQuery){
+    sortItems(dbName, sortQuery) {
         return fetch(`${config.API_ENDPOINT}/${dbName}?${sortQuery}`, {
             headers: {
                 'Authorization': `Basic ${config.API_TOKEN}`,
             },
         })
-        .then(res =>
-            (!res.ok)
-              ? res.json().then(e => Promise.reject(e))
-              : res.json()
-        )
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            );
     },
-    postItem(dbName,item){
-        //const proxy='https://cors-anywhere.herokuapp.com'
-        return fetch(`${config.API_ENDPOINT}/${dbName}`,{
+    postItem(dbName, item) {
+        return fetch(`${config.API_ENDPOINT}/${dbName}`, {
             method: `POST`,
-            headers:{
+            headers: {
                 'Authorization': `Basic ${config.API_TOKEN}`,
                 'content-type': 'application/json'
             },
             body: JSON.stringify(item)
         })
-        .then(res=>(!res.ok)
-        ? res.json().then(e=>Promise.reject(e))
-        : res.json())
+            .then(res => (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json());
     },
-    getItemById(dbName,id){
+    getItemById(dbName, id) {
         return fetch(`${config.API_ENDPOINT}/${dbName}/${id}`, {
             headers: {
                 'Authorization': `Basic ${config.API_TOKEN}`,
             },
         })
-        .then(res =>
-            (!res.ok)
-              ? res.json().then(e => Promise.reject(e))
-              : res.json()
-        )
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            );
     },
-    patchItemById(dbName,id,fieldsToUpdate){
-        return fetch(`${config.API_ENDPOINT}/${dbName}/${id}`,{
+    patchItemById(dbName, id, fieldsToUpdate) {
+        return fetch(`${config.API_ENDPOINT}/${dbName}/${id}`, {
             method: `PATCH`,
-            headers:{
+            headers: {
                 'Authorization': `Basic ${config.API_TOKEN}`,
                 'content-type': 'application/json'
             },
             body: JSON.stringify(fieldsToUpdate)
         })
-        .then(res=>(!res.ok)
-        ? res.json().then(e=>Promise.reject(e))
-        : res.json())
+            .then(res => (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json());
     },
-    DeleteItemById(dbName,id){
-        return fetch(`${config.API_ENDPOINT}/${dbName}/${id}`,{
+    DeleteItemById(dbName, id) {
+        return fetch(`${config.API_ENDPOINT}/${dbName}/${id}`, {
             method: `DELETE`,
-            headers:{
+            headers: {
                 'Authorization': `Basic ${config.API_TOKEN}`,
             },
         })
-        .then(res=>(!res.ok)
-        ? res.json().then(e=>Promise.reject(e))
-        : res.json())
+            .then(res => (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json());
     },
-}
-export const MealApiServices={
-    getMealsByUser(id){
+};
+export const MealApiServices = {
+    getMealsByUser(id) {
         return fetch(`${config.API_ENDPOINT}/meals?userId=${id}`, {
             headers: {
                 'Authorization': `Basic ${config.API_TOKEN}`,
             },
         })
-        .then(res =>
-            (!res.ok)
-              ? res.json().then(e => Promise.reject(e))
-              : res.json()
-        )
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            );
     }
-}
+};

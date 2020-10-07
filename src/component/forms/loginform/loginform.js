@@ -1,7 +1,7 @@
 import React from 'react';
 import TokenService from '../../../services/TokenService';
 import AuthHelperService from '../../../services/AuthHelperService';
-import { GeneralApiServices } from '../../../services/api-service'
+import { GeneralApiServices } from '../../../services/api-service';
 import { Link } from 'react-router-dom';
 import './loginform-style.css';
 
@@ -22,13 +22,12 @@ export default class LoginForm extends React.Component {
 
 	componentDidMount() {
 		GeneralApiServices.getAllItems('users').then(json => {
-			this.setState({ userList: json })
-		})
-	}
+			this.setState({ userList: json });
+		});
+	};
 
 	handleSubmitJwtAuth = (ev) => {
 		ev.preventDefault();
-		//console.log('form submitted');
 		this.setState({ error: null });
 		const { user_name, password } = ev.target;
 		const login = {
@@ -45,7 +44,6 @@ export default class LoginForm extends React.Component {
 			})
 			.catch((res) => {
 				this.setState({ error: res.message });
-				//alert(JSON.stringify(this.state.error));
 			});
 	};
 
@@ -94,10 +92,9 @@ export default class LoginForm extends React.Component {
 				</form>
 			</main>
 		);
-	}
+	};
 	renderForgotPasswordForm() {
 		const { passwordMessage } = this.state;
-		//const boolean= (passwordMessage)? true: false
 		const message = passwordMessage ? <div className="message">{passwordMessage}</div> : '';
 		return (
 			<main className="forgotPass_holder">
@@ -124,7 +121,7 @@ export default class LoginForm extends React.Component {
 				</form>
 			</main>
 		);
-	}
+	};
 
 	renderLoginForm() {
 		return (
@@ -177,8 +174,8 @@ export default class LoginForm extends React.Component {
 				</form>
 			</main>
 		);
-	}
-	// 
+	};
+
 	render() {
 		const { error, displayForm } = this.state;
 		const form =
@@ -193,5 +190,5 @@ export default class LoginForm extends React.Component {
 				{error && <p>{error}</p>}
 			</div>
 		);
-	}
-}
+	};
+};
