@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NavBar from '../../component/navBar/navBar'
+import NavBar from '../../component/navBar/navBar';
 import { MemoryRouter } from 'react-router-dom';
 
 

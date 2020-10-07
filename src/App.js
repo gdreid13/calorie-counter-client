@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
-import TokenService from '../src/services/TokenService'
-import {GeneralApiServices} from '../src/services/api-service'
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import TokenService from '../src/services/TokenService';
+import { GeneralApiServices } from '../src/services/api-service';
 import './app-style.css';
 import HomePage from './routes/homepage/homepage';
 import LandingPage from './routes/landingpage/landingpage';
@@ -20,53 +20,54 @@ export default class App extends Component {
       hasAuthToken: TokenService.hasAuthToken(),
       userid: '',
       isAdmin: false,
-      full_name:''
-    }
-  }
-  componentDidMount(){
-    const authToken= TokenService.getAuthToken()
+      full_name: ''
+    };
+  };
+  componentDidMount() {
+    const authToken = TokenService.getAuthToken();
     if (authToken) {
-      this.handleLoginSuccess()
-    }
-  }
+      this.handleLoginSuccess();
+    };
+  };
 
-  handleLoginSuccess = ()=>{
-    const authToken=TokenService.getAuthToken()
-    const userid=TokenService.parseJwt(authToken).user_id
-    GeneralApiServices.getItemById('users',userid)
-      .then(user=>this.setState({
+  handleLoginSuccess = () => {
+    const authToken = TokenService.getAuthToken();
+    const userid = TokenService.parseJwt(authToken).user_id;
+    GeneralApiServices.getItemById('users', userid)
+      .then(user => this.setState({
         hasAuthToken: TokenService.hasAuthToken(),
         isAdmin: user.isAdmin,
         userid: userid,
         full_name: user.full_name
-      }))
-  }
+      }));
+  };
 
-  handleLogoutSuccess = ()=>{
-    TokenService.clearAuthToken()
+  handleLogoutSuccess = () => {
+    TokenService.clearAuthToken();
     this.setState({
       hasAuthToken: TokenService.hasAuthToken(),
       isAdmin: false,
-      userid:'',
+      userid: '',
       full_name: ''
-    })
-  }
+    });
+  };
+
   render() {
-    const {hasError,userid} = this.state
+    const { hasError, userid } = this.state;
     return (
       <div className="App">
-        <NavBar token = {this.state} onLogoutSuccess={this.handleLogoutSuccess}/>
+        <NavBar token={this.state} onLogoutSuccess={this.handleLogoutSuccess} />
 
         <main className="App_main">
-          {hasError &&<div className='red'>An unknown error has occurred.</div>}
-          <div className="content"> 
+          {hasError && <div className='red'>An unknown error has occurred.</div>}
+          <div className="content">
             <Switch>
-              <Route exact path={'/'} component={(props) => <LandingPage {...props} />}/>
-              <Route path={'/home'} component={(props) => <HomePage {...props} userId={userid}/>}/>
-              <Route path={'/register'}component={(props) => <RegistrationPage {...props} />}/>
-              <Route path={'/login'} component={(props) => <LoginPage {...props} loginUpdate={this.handleLoginSuccess}/>}/>
-              <Route path={'/fitnesstips'}component={(props) => <FitnessTipsPage {...props} />}/>
-              <Route component={(props) => <NotFoundPage {...props} />}/>
+              <Route exact path={'/'} component={(props) => <LandingPage {...props} />} />
+              <Route path={'/home'} component={(props) => <HomePage {...props} userId={userid} />} />
+              <Route path={'/register'} component={(props) => <RegistrationPage {...props} />} />
+              <Route path={'/login'} component={(props) => <LoginPage {...props} loginUpdate={this.handleLoginSuccess} />} />
+              <Route path={'/fitnesstips'} component={(props) => <FitnessTipsPage {...props} />} />
+              <Route component={(props) => <NotFoundPage {...props} />} />
             </Switch>
           </div>
         </main>
@@ -76,8 +77,7 @@ export default class App extends Component {
         </footer>
 
       </div>
-    )
-  }
-
-}
+    );
+  };
+};
 

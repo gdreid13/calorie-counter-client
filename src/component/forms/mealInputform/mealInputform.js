@@ -51,8 +51,8 @@ export default class mealInputform extends React.Component {
 	componentDidUpdate(prevProps) {
 		if (this.props.currentMealInfo !== prevProps.currentMealInfo) {
 			this.updateCurrentMeal();
-		}
-	}
+		};
+	};
 
 	getMealsAndCalories = (e) => {
 		e.preventDefault();
@@ -112,7 +112,7 @@ export default class mealInputform extends React.Component {
 		const { meal } = this.state;
 		return (
 			<div className="meal_entries">
-				<input type="text"  placeholder={placeholder} name={food} value={meal[`${food}`]} onChange={this.onChange} />
+				<input type="text" placeholder={placeholder} name={food} value={meal[`${food}`]} onChange={this.onChange} />
 
 				<input
 					type="number"
@@ -123,7 +123,7 @@ export default class mealInputform extends React.Component {
 				/>
 			</div>
 		);
-	}
+	};
 
 	render() {
 		const breakfast = this.renderCalorieForm("Breakfast", 'breakfast_food', 'breakfast_calories');
@@ -146,13 +146,13 @@ export default class mealInputform extends React.Component {
 						D I N N E R
 					{dinner}
 					</p>
-				
-						<button className="meal__button" type="submit">
-							SUBMIT
+
+					<button className="meal__button" type="submit">
+						SUBMIT
 					</button>
 					{error && <div className="user__carb-form-error">{error}</div>}
 				</form>
 			</div>
 		);
-	}
-}
+	};
+};
