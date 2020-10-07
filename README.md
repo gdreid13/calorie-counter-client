@@ -4,7 +4,10 @@ This application allows tracking of what a user eats and how many calories in a 
 User also has links to healthy recipes and workouts to try.
 
 ## Live: 
-https://calorie-counter-client.vercel.app/
+https://calorie-counter-client.vercel.app
+
+## Back-end repo:
+https://github.com/gdreid13/calorie-counter-server
 
 ## Built with:
 * React
@@ -12,9 +15,13 @@ https://calorie-counter-client.vercel.app/
 * HTML5, JQuery, CSS
 
 ## App Features:
+* Calorie tracking
+* Meals tracking
+* Healthy recipes
+* Workouts
 
 ### For general visitors: 
-* Get advices for healthy meals and other fitness tips
+* Healthy recipes and workouts can be accessed without an account
 
 ### For registered users:
 * Post, edit meal for a specific date
@@ -22,33 +29,28 @@ https://calorie-counter-client.vercel.app/
 * Data protection: bcrypt
 * Username recovery/password reset
 
-## Getting started
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-In the project directory, run:
-
-`npx create-react-app appName`
-
-`npm start`
-
-`npm test`
-
-`npm run build`
-
-App is then ready to be deployed!
-
 ## Installed packages:
 * react-router-dom, prop-types,enzyme
 * react-test-renderer(-D)
 
-## Links:
+## Landing page
+![Landing page](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/dashboard.jpg)
 
-[Live version](https://calorie-counter-client.vercel.app/)
+## Registration
+![Registration](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/register.jpg)
 
-[API Server](https://sheltered-ravine-01866.herokuapp.com/)
+## Calendar
+![Calendar](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/register.jpg)
 
-[Github Server](https://github.com/gdreid13/calorie-counter-server)
+## Meal entry
+![Meal entry](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/mealentry.jpg)
+
+## Recipe and fitness links
+![Recipe and fitness links](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/recipefitness.jpg)
+
+## Future developments
+* Implement 1lb / week weight loss feature
+
 
 ## Learn more:
 
