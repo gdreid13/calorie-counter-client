@@ -34,25 +34,25 @@ https://github.com/gdreid13/calorie-counter-server
 * react-test-renderer(-D)
 
 ## Landing page
-![Landing page](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/dashboard.jpg)
+![Landing page](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/dashboard.JPG)
 
 ## Registration
-![Registration](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/register.jpg)
+![Registration](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/register.JPG)
 
 ## Calendar
-![Calendar](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/register.jpg)
+![Calendar](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/register.JPG)
 
 ## Meal entry
-![Meal entry](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/mealentry.jpg)
+![Meal entry](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/mealentry.JPG)
 
 ## Recipe and fitness links
-![Recipe and fitness links](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/recipefitness.jpg)
+![Recipe and fitness links](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/recipefitness.JPG)
 
 ## Future developments
 * Implement 1lb / week weight loss feature
 
 
-## Learn more:
+## Developed by:
 
 [Greg](https://github.com/gdreid13)
 [Kidus](https://github.com/KidusY)
