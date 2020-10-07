@@ -8,8 +8,10 @@
 	text-shadow: 1px 3px 3px #535353;
   }
   .landing__description {
+	padding-top: 30px;
 	font-size: 25px;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
+	color: white;
   }
   .landing__link {
 	font-size: 20px;

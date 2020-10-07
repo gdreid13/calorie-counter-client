@@ -27,6 +27,15 @@ export default class LandingPage extends React.Component {
 							My Dashboard
 						</Link>
 					</h4>
+					<p className="landing__description">
+						Sign up and log in to use the meal tracking features!
+					</p>
+					<p className="landing__description">
+						Enter breakfast, lunch, and dinner for any day in any year!
+					</p>
+					<p className="landing__description">
+						Fitness tips will lead you to healthy recipes and workouts!
+					</p>
 				</div>
 			</div>
 		);
