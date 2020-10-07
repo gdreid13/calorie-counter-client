@@ -36,9 +36,7 @@
     cursor: pointer;
     
 }
-/* .refresh:hover{
-    transform: scale(1.04);
-} */
+
 .refresh i{
     font-size: 30px;
 }
@@ -82,4 +80,13 @@
     padding-top: 20px;
     margin: 20px auto;
     box-shadow: 1px 3px 3px #535353;
+}
+
+@media screen and (max-width: 360px) {
+    .meal__header {
+        min-width: 120px;
+        font-size: 18px;
+        margin: 5px auto;
+        padding: 5px;
+    }
 }

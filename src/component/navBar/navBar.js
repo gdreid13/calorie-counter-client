@@ -26,7 +26,7 @@ export default class NavBar extends Component {
 				<Link className="nav__menu_path" onClick={this.props.onLogoutSuccess} to="/" aria-label="logout">
 					Logout
 				</Link>
-				<Link className="nav__menu_path" to={'/users/' + this.props.token.userid} aria-label="home-page">
+				<Link className="nav__menu_path" to={'/home'} aria-label="home-page">
 					{this.props.token.full_name}
 				</Link>
 				<Link className="nav__menu_path" to={'/fitnessTips'}> Fitness Tips </Link>

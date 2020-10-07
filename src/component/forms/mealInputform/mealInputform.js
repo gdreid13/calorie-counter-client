@@ -77,7 +77,6 @@ export default class mealInputform extends React.Component {
 			dinner_calories: dinner_calories.value
 		};
 
-
 		const { userId, selectedDate, currentMealInfo, onAddMealSuccess } = this.props;
 		const { id } = currentMealInfo;
 		const date = moment(selectedDate).format('YYYY-MM-DD');
