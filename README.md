@@ -1,4 +1,4 @@
-# calorie-counter-server
+# calorie-counter-client
 
 This application allows tracking of what a user eats and how many calories in a meal.  It features daily and monthly tracking.
 User also has links to healthy recipes and workouts to try.
