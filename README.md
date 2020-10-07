@@ -1,6 +1,10 @@
 # calorie-counter-server
 
-This is our second full stack capstone, as junior developers, to demonstrate our mastery of React, Node and PostgresSQL . To learn more about our user stories, please read [HERE](https://docs.google.com/spreadsheets/d/10vr_gILvtYHT7AtwDcj6wCP0vuv-HUcrETIH3dWyJcU/edit#gid=0)
+This application allows tracking of what a user eats and how many calories in a meal.  It features daily and monthly tracking.
+User also has links to healthy recipes and workouts to try.
+
+## Live: 
+https://calorie-counter-client.vercel.app/
 
 ## Built with:
 * React
