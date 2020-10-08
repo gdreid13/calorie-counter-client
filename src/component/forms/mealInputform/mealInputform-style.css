@@ -4,7 +4,6 @@
 .meal_entries{
     margin-top: 15px;
     margin-bottom: 15px;
-    
 }
 .meal__box {
     margin-bottom: 5px;
@@ -19,6 +18,7 @@
 .meal_entries input[type='text'], [type='number'] {
     width: 30%;
     border: 2px solid #2B2A2A;
+    font-size: auto;
 }
 .user__carb-form{
     height: auto;
@@ -27,8 +27,6 @@
 .user__carb-form-error{
     color: red;
     margin-top: 10px;
-    text-align: center;
-    
 }
 .refresh{
     background: transparent;
