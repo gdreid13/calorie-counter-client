@@ -59,7 +59,7 @@
     justify-content: space-evenly;
     text-align: center;
 }
-.meal_control button{
+.meal__button{
     margin-top: 20px;
     width: 100px;
     padding: 10px;
