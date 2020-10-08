@@ -105,7 +105,7 @@ export default class RegForm extends React.Component {
 
                     <div>
                         <label htmlFor="user_name">*empty*</label>
-                        <input className='username_input' type="text" placeholder='Username' name='user_name' id='user_name' onChange={this.onChange} />
+                        <input className='username_input' type="text" placeholder='Username' name='user_name' id='user_name' onChange={this.onChange} required/>
                     </div>
                     {user_name.touch && <ValidationError message={usernameError} />}
 

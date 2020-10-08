@@ -38,10 +38,12 @@ export function validatePassword(password = '') {
 
 };
 
-export function validateUsername(userList = [], username = '') {
-    const usernameExists = userList.find(user => user.user_name === username);
-    if (username.length === 0) return 'Username is required';
-    if (usernameExists) return 'Username already exists';
+export function validateUsername(userList = [], user_name = '') {
+    const usernameExists = userList.find(user => user.user_name === user_name);
+    if (user_name.length === 0) 
+    return 'Username is required';
+    if (usernameExists) 
+    return 'Username already exists';
     return null;
 };
 
