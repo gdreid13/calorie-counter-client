@@ -49,8 +49,7 @@ export default class RegForm extends React.Component {
             age: age.value, gender: gender.value,
             height: height.value, weight: weight.value
         }
-        //console.log(data)
-        //this.setState({ error: null })
+  
 
         if (id) {
             for (let key of ['full_name', 'user_name', 'password', 'age', 'gender', 'height', 'weight']) {
