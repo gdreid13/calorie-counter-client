@@ -5,17 +5,19 @@ import './navBar-style.css';
 
 export default class NavBar extends Component {
 	static defaultProps = {
-		onLogoutSuccess: () => {},
+		onLogoutSuccess: () => { },
 		token: {}
 	};
 
 	state = {
 		displayDropDown: false
 	};
+
 	onClickBar = () => {
 		const boolean = this.state.displayDropdown ? false : true;
 		this.setState({ displayDropdown: boolean });
 	};
+
 	closeDropdown = () => this.setState({ displayDropdown: false });
 
 	renderLogoutLink() {
@@ -27,7 +29,7 @@ export default class NavBar extends Component {
 				<Link className="nav__menu_path" to={'/home'} aria-label="home-page">
 					{this.props.token.full_name}
 				</Link>
-                <Link className="nav__menu_path" to={'/fitnessTips'}> Fitness Tips </Link>
+				<Link className="nav__menu_path" to={'/fitnessTips'}> Fitness Tips </Link>
 
 				{this.props.token.isAdmin && (
 					<Link className="nav__menu_path" to="/admin" aria-label="admin-page">
@@ -37,7 +39,8 @@ export default class NavBar extends Component {
 				)}
 			</div>
 		);
-	}
+	};
+
 	renderLoginLink() {
 		return (
 			<div className="Header-not-logged-in" onClick={this.closeDropdown}>
@@ -59,7 +62,8 @@ export default class NavBar extends Component {
 				)}
 			</div>
 		);
-	}
+	};
+
 	render() {
 		const nav = this.props.token.hasAuthToken ? this.renderLogoutLink() : this.renderLoginLink();
 		return (
@@ -78,5 +82,5 @@ export default class NavBar extends Component {
 				</div>
 			</nav>
 		);
-	}
-}
+	};
+};

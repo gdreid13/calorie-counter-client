@@ -36,7 +36,7 @@ export default class HomePage extends React.Component {
 		if (meals) {
 			let total = meals.reduce((a, b) => a + b, 0);
 			this.setState({ caloriesOfTheMonth: total });
-		}
+		};
 	};
 
 	getDatesThatHaveMeals = () => {
@@ -47,15 +47,16 @@ export default class HomePage extends React.Component {
 			for (let i = 0; i < allMeals.length; i++) {
 				let date = allMeals[i].dateofmeal;
 				array.push(format(date));
-			}
-		}
+			};
+		};
+
 		const dates = document.querySelectorAll('.react-calendar__month-view__days__day abbr');
 		for (let i = 0; i < dates.length; i++) {
 			const d = new Date(dates[i].getAttribute('aria-label'));
 			if (array.includes(format(d))) {
 				dates[i].className = 'highlight';
-			}
-		}
+			};
+		};
 	};
 
 	updateMeals = () => {
@@ -70,11 +71,11 @@ export default class HomePage extends React.Component {
 	componentDidMount() {
 		this._isMounted = true;
 		this._isMounted && this.updateMeals();
-	}
+	};
 
 	componentWillUnmount() {
 		this._isMounted = false;
-	}
+	};
 
 	onMealSuccess = () => {
 		this.updateMeals();
@@ -97,7 +98,7 @@ export default class HomePage extends React.Component {
 			await this.setState({ month: month });
 			this.updateCaloriesOfTheMonth();
 			this.getDatesThatHaveMeals();
-		}
+		};
 	};
 
 	render() {
@@ -107,16 +108,16 @@ export default class HomePage extends React.Component {
 			<div className="home">
 				<h1 className="dash">D A S H B O A R D </h1>
 				<h2 className="my_calories">
-					MONTHLY CALORIES <br /> 
-			<p className="calorieTotal">{caloriesOfTheMonth}</p>
+					MONTHLY CALORIES <br />
+					<p className="calorieTotal">{caloriesOfTheMonth}</p>
 				</h2>
 				<CalorieCalendar getSelectedDate={this.getSelectedDate} getMealInfoByMonth={this.getCurrentMonth} />
 
 				{selectedDate.toString() === 'Invalid Date' ? (
 					<h2> Select Date </h2>
 				) : (
-					<h2> {selectedDate.toDateString()} </h2>
-				)}
+						<h2> {selectedDate.toDateString()} </h2>
+					)}
 
 				<Mealinputform
 					selectedDate={selectedDate}
@@ -126,5 +127,5 @@ export default class HomePage extends React.Component {
 				/>
 			</div>
 		);
-	}
-}
+	};
+};

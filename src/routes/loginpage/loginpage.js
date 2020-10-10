@@ -1,6 +1,5 @@
-import React from 'react'
-import LoginForm from '../../component/forms/loginform/loginform'
-// import { withRouter } from 'react-router-dom'
+import React from 'react';
+import LoginForm from '../../component/forms/loginform/loginform';
 import './loginpage-style.css';
 
 export default class LoginPage extends React.Component {
@@ -10,13 +9,13 @@ export default class LoginPage extends React.Component {
             push: () => { },
         },
         loginUpdate: () => { }
-    }
+    };
 
     handleLoginSuccess = () => {
-        const { history, loginUpdate } = this.props
-        loginUpdate()
-        history.push('/home')
-    }
+        const { history, loginUpdate } = this.props;
+        loginUpdate();
+        history.push('/home');
+    };
 
     render() {
         return (
@@ -25,6 +24,6 @@ export default class LoginPage extends React.Component {
                     onLoginSuccess={this.handleLoginSuccess}
                 />
             </section>
-        )
-    }
-}
+        );
+    };
+};

@@ -1,4 +1,4 @@
-import config from '../config'
+import config from '../config';
 
 const AuthHelperService = {
   postLogin(credentials) {
@@ -13,10 +13,9 @@ const AuthHelperService = {
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-      )
+      );
   },
   postUser(user) {
-    console.log(user);
     return fetch(`${config.API_ENDPOINT}/users`, {
       method: 'POST',
       headers: {
@@ -28,8 +27,8 @@ const AuthHelperService = {
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-      )
+      );
   },
-}
+};
 
-export default AuthHelperService
+export default AuthHelperService;

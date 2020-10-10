@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Footer from '../../component/footer/footer'
+import Footer from '../../component/footer/footer';
 import { MemoryRouter } from 'react-router-dom';
 
 

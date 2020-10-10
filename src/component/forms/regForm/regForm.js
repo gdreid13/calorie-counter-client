@@ -1,8 +1,8 @@
 import React from 'react';
-import AuthHelperService from '../../../services/AuthHelperService'
-import { GeneralApiServices } from '../../../services/api-service'
-import { validateName, validatePassword, validateUsername, ValidationError, BiometricComponent } from '../form-helpers'
-import './regForm-style.css'
+import AuthHelperService from '../../../services/AuthHelperService';
+import { GeneralApiServices } from '../../../services/api-service';
+import { validateName, validatePassword, validateUsername, ValidationError, BiometricComponent } from '../form-helpers';
+import './regForm-style.css';
 
 export default class RegForm extends React.Component {
 
@@ -10,7 +10,7 @@ export default class RegForm extends React.Component {
         onRegistrationSuccess: () => { },
         handleCancel: () => { },
         user: {}
-    }
+    };
 
     state = {
         error: null, statusMessage: false,
@@ -22,18 +22,18 @@ export default class RegForm extends React.Component {
         weight: { value: this.props.user.weight },
         height: { value: this.props.user.height },
         age: { value: this.props.user.age },
-    }
+    };
 
     componentDidMount() {
         GeneralApiServices.getAllItems('users').then(json => {
-            this.setState({ userList: json })
-        })
-    }
+            this.setState({ userList: json });
+        });
+    };
 
     handleSubmit = ev => {
-        ev.preventDefault()
-        const { id } = this.props.user
-        const { name, user_name, password, age, gender, height, weight } = ev.target
+        ev.preventDefault();
+        const { id } = this.props.user;
+        const { name, user_name, password, age, gender, height, weight } = ev.target;
         const resetValue = () => {
             name.value = ''
             user_name.value = ''
@@ -42,57 +42,56 @@ export default class RegForm extends React.Component {
             gender.value = ''
             height.value = ''
             weight.value = ''
-        }
+        };
         const data = {
             full_name: name.value,
             user_name: user_name.value, password: password.value,
             age: age.value, gender: gender.value,
             height: height.value, weight: weight.value
-        }
-  
+        };
 
         if (id) {
             for (let key of ['full_name', 'user_name', 'password', 'age', 'gender', 'height', 'weight']) {
                 if (!data[key]) delete data[key]
-            }
+            };
             GeneralApiServices.patchItemById('users', id, data)
                 .then(user => {
-                    resetValue()
+                    resetValue();
 
-                }).catch(res => this.setState({ error: res.error }))
+                }).catch(res => this.setState({ error: res.error }));
         }
         else {
             AuthHelperService.postUser(data)
                 .then(user => {
-                    resetValue()
-                    this.props.onRegistrationSuccess()
-                }).catch(res => this.setState({ error: res.message }))
-        }
+                    resetValue();
+                    this.props.onRegistrationSuccess();
+                }).catch(res => this.setState({ error: res.message }));
+        };
 
-    }
+    };
 
     onChange = e => {
         const key = e.target.name;
         const newValue = e.target.value;
-        this.setState({ [key]: { value: newValue, touch: true } })
-    }
+        this.setState({ [key]: { value: newValue, touch: true } });
+    };
 
-    hideStatusMessage = () => this.setState({ statusMessage: false })
+    hideStatusMessage = () => this.setState({ statusMessage: false });
 
     render() {
-        const { user } = this.props
-        const { name, user_name, password, userList } = this.state
+        const { user } = this.props;
+        const { name, user_name, password, userList } = this.state;
         const usernameError = (user.user_name && !user_name.value)
             ? false
             : (user.user_name === user_name.value) ? false
-                : validateUsername(userList, user_name.value)
+                : validateUsername(userList, user_name.value);
         const passwordError = (user.user_name && !password.value)
             ? false
-            : validatePassword(password.value)
+            : validatePassword(password.value);
         const nameError = (user.user_name && (!name.value))
             ? false
-            : validateName(name.value)
-        const submitButton = (user.user_name) ? 'Save' : 'REGISTER'
+            : validateName(name.value);
+        const submitButton = (user.user_name) ? 'Save' : 'REGISTER';
 
         return (
             <main className="reg__holder">
@@ -106,7 +105,7 @@ export default class RegForm extends React.Component {
 
                     <div>
                         <label htmlFor="user_name">*empty*</label>
-                        <input className='username_input' type="text" placeholder='Username' name='user_name' id='user_name' onChange={this.onChange} />
+                        <input className='username_input' type="text" placeholder='Username' name='user_name' id='user_name' onChange={this.onChange} required/>
                     </div>
                     {user_name.touch && <ValidationError message={usernameError} />}
 
@@ -135,5 +134,5 @@ export default class RegForm extends React.Component {
             </main>
 
         )
-    }
-}
+    };
+};

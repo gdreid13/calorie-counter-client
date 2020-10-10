@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CalorieCalendar from '../../component/calendar/calendar'
+import CalorieCalendar from '../../component/calendar/calendar';
 
 
 it('renders without crashing', () => {

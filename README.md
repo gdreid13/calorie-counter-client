@@ -1,6 +1,13 @@
-# calorie-counter-server
+# calorie-counter-client
 
-This is our second full stack capstone, as junior developers, to demonstrate our mastery of React, Node and PostgresSQL . To learn more about our user stories, please read [HERE](https://docs.google.com/spreadsheets/d/10vr_gILvtYHT7AtwDcj6wCP0vuv-HUcrETIH3dWyJcU/edit#gid=0)
+This application allows tracking of what a user eats and how many calories in a meal.  It features daily and monthly tracking.
+User also has links to healthy recipes and workouts to try.
+
+## Live: 
+https://calorie-counter-client.vercel.app
+
+## Back-end repo:
+https://github.com/gdreid13/calorie-counter-server
 
 ## Built with:
 * React
@@ -8,9 +15,13 @@ This is our second full stack capstone, as junior developers, to demonstrate our
 * HTML5, JQuery, CSS
 
 ## App Features:
+* Calorie tracking
+* Meals tracking
+* Healthy recipes
+* Workouts
 
 ### For general visitors: 
-* Get advices for healthy meals and other fitness tips
+* Healthy recipes and workouts can be accessed without an account
 
 ### For registered users:
 * Post, edit meal for a specific date
@@ -18,35 +29,30 @@ This is our second full stack capstone, as junior developers, to demonstrate our
 * Data protection: bcrypt
 * Username recovery/password reset
 
-## Getting started
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-In the project directory, run:
-
-`npx create-react-app appName`
-
-`npm start`
-
-`npm test`
-
-`npm run build`
-
-App is then ready to be deployed!
-
 ## Installed packages:
 * react-router-dom, prop-types,enzyme
 * react-test-renderer(-D)
 
-## Links:
+## Landing page
+![Landing page](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/dashboard.JPG)
 
-[Live version](https://calorie-counter-client.vercel.app/)
+## Registration
+![Registration](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/register.JPG)
 
-[API Server](https://sheltered-ravine-01866.herokuapp.com/)
+## Calendar
+![Calendar](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/register.JPG)
 
-[Github Server](https://github.com/gdreid13/calorie-counter-server)
+## Meal entry
+![Meal entry](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/mealentry.JPG)
 
-## Learn more:
+## Recipe and fitness links
+![Recipe and fitness links](https://github.com/gdreid13/calorie-counter-client/blob/master/screenshots/recipefitness.JPG)
+
+## Future developments
+* Implement 1lb / week weight loss feature
+
+
+## Developed by:
 
 [Greg](https://github.com/gdreid13)
 [Kidus](https://github.com/KidusY)

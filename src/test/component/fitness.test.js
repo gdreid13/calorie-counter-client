@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FitnessTipsPage from '../../component/fitness/fitness'
+import FitnessTipsPage from '../../component/fitness/fitness';
 
 
 it('renders without crashing', () => {
