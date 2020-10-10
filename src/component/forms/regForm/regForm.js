@@ -119,7 +119,7 @@ export default class RegForm extends React.Component {
 
                     <div>
                         <label htmlFor="gender">*empty*</label>
-                        <select className='gender_input' id="gender" name="gender">
+                        <select className='gender_input' id="gender" name="gender" required>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="other">Other</option>

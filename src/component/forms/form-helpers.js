@@ -58,11 +58,11 @@ export function BiometricComponent() {
     return (
         <div className='biometric_form'>
             <label htmlFor="age">*empty*</label>
-            <input className="biometric_input" placeholder='Age' type="number" name='age' id='age' min='5' max='125' /><br></br>
+            <input className="biometric_input" placeholder='Age' type="number" name='age' id='age' min='5' max='125' required /><br></br>
             <label htmlFor="height">*empty*</label>
-            <input className="biometric_input" placeholder='Height (in)' type="number" name='height' id='height' min='40' max='105' /><br></br>
+            <input className="biometric_input" placeholder='Height (in)' type="number" name='height' id='height' min='40' max='105' required/><br></br>
             <label htmlFor="weight">*empty*</label>
-            <input className="biometric_input" placeholder='Weight (lb)' type="number" name='weight' id='weight' min='30' max='900' /><br></br>
+            <input className="biometric_input" placeholder='Weight (lb)' type="number" name='weight' id='weight' min='30' max='900' required/><br></br>
         </div>
     );
 };
@@ -75,20 +75,20 @@ export function BiometricSelection() {
         };
         return array;
     };
-    const ageOptions = () => {
-        const array = createArray(5, 125);
-        const options = array.map((i) => <option key={i} value={i}>{i}</option>);
-        return (
-            <select id="age" name="age">
-                {options}
-            </select>
-        );
-    };
+    // const ageOptions = () => {
+    //     const array = createArray(5, 125);
+    //     const options = array.map((i) => <option key={i} value={i}>{i}</option>);
+    //     return (
+           
+               
+           
+    //     );
+    // };
     const weightOptions = () => {
         const array = createArray(30, 900);
         const options = array.map((i) => <option key={i} value={i}>{i}</option>);
         return (
-            <select id="weight" name="weight">
+            <select id="weight" name="weight" required>
                 {options}
             </select>
         );
@@ -97,7 +97,7 @@ export function BiometricSelection() {
         const array = createArray(40, 105);
         const options = array.map((i) => <option key={i} value={i}>{i}</option>);
         return (
-            <select id="height" name="height">
+            <select id="height" name="height" required>
                 {options}
             </select>
         );
@@ -118,7 +118,7 @@ export function BiometricSelection() {
             </div>
             <div>
                 <header>Age</header>
-                {age}
+                <input id="age" name="age" required />
             </div>
             <div>
                 <header>Weight</header>
